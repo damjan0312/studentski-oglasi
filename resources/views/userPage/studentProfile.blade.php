@@ -33,11 +33,9 @@
             <p>Tip korisnika:</p>
             <p>E-mail adresa:</p>
             <p>Broj telefona: </p>
-            <p>Fakultet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:</p>
+            <p>Fakultet</p>
             <p>Godina studiranja:</p>
             <p>Broj postavljenih oglasa:</p>
-
-
           </div>
 
         </div>

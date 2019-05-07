@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth ;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,16 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('userPage.studentprofil');
+      $role='student-izdavac';
+      if(Auth::user()->$role== false)
+      {
+        return view('userPage.studentProfile');
+      }
+      else {
+          return view('userPage.publisherProfile');
+      }
+
     }
+
+
 }

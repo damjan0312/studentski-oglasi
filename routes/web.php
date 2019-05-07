@@ -20,4 +20,5 @@ Route::get('/verifikacija', 'PublicController@verify')->name('verify');
 Auth::routes(['verify' => true]);
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-Route::get('/profil','HomeController@profile')->name('profile')->middleware('verified');
+
+Route::get('/profil','HomeController@profile')->name('profile');
