@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,yBAAyB;EACrB,WAAW,EAAE,KAAK;;AAGtB,oBAAoB;EAChB,UAAU,EAAC,IAAI;;AAGnB,iBAAkB;EACd,OAAO,EAAC,IAAI;;AAEhB,uBAAuB;EACnB,OAAO,EAAC,IAAI;;AAEhB,uBAAuB;EACnB,OAAO,EAAC,IAAI",
+"sources": ["registration.scss"],
+"names": [],
+"file": "registration.css"
+}

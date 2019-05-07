@@ -1,0 +1,47 @@
+
+
+nav > .nav.nav-tabs{
+
+  border: none;
+    color:rgb(248, 249, 250);
+    background:rgba(32, 32, 32, 0.7);
+    border-radius:0;
+
+}
+nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active
+{
+  border: none;
+    padding: 18px 25px;
+    color:#fff;
+    background:rgba(32, 32, 32, 0.7);
+    border-radius:0;
+}
+
+nav > div a.nav-item.nav-link.active:after
+ {
+  content: "";
+  position: relative;
+  bottom: -60px;
+  left: -10%;
+  border: 15px solid transparent;
+  border-top-color: rgba(236, 99, 19);
+}
+.tab-content{
+  background: rgb(248, 249, 250);
+    line-height: 25px;
+    border-top:5px solid rgba(236, 99, 19);
+
+
+    padding:30px 25px;
+}
+
+nav > div a.nav-item.nav-link:hover,
+nav > div a.nav-item.nav-link:focus
+{
+  border: none;
+    background: rgba(236, 99, 19);
+    color:#fff;
+    border-radius:0;
+    transition:background 0.20s linear;
+}

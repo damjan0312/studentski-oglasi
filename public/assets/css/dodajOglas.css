@@ -1,0 +1,23 @@
+body {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: 'Oxygen'; }
+
+.navbar {
+  border-bottom: rgba(236, 99, 19, 0.7) 3px solid;
+  background-color: rgba(32, 32, 32, 0.7); }
+
+#oglas-section {
+  background: url("../../assets/img/img3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 850px; }
+
+#home-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 760px;
+  background-color: rgba(0, 0, 0, 0.7); }
