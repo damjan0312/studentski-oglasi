@@ -3,6 +3,9 @@
 
 <!-- body --->
 
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/profil.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/profilPanelTab.css')}}">
+
 
 <section id="profile-section" class="text-dark">
 
@@ -159,14 +162,6 @@
 
 </section>
 
-
-
-
-
-
-
-
-<script src="{{asset('assets/js/uploadPicture.js')}}"></script>
 <script src="{{asset('assets/js/login.js')}}"></script>
 
 <!-- /body --->

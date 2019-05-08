@@ -37,7 +37,11 @@ class HomeController extends Controller
       else {
           return view('userPage.publisherProfile');
       }
+    }
 
+    public function ad()
+    {
+      return view('userPage.adPages.adPage');
     }
 
 

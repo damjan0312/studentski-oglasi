@@ -11,9 +11,9 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/profil.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/profilPanelTab.css')}}">
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/masterProfile.css')}}">
+    
 
 
 
@@ -57,7 +57,7 @@
                             <a href="#" class="nav-link">Pogledaj oglase</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">+Postavi oglas</a>
+                            <a href="{{route('ad')}}"  class="nav-link">+Postavi oglas</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">O nama</a>
@@ -68,15 +68,21 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    {{ __('Profil') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Odjavi se') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
+
+
+                                
                             </div>
                         </li>
                     </ul>
@@ -86,5 +92,9 @@
 
     </div>
     @yield('content')
+    @include('layouts.footer')
 </body>
+
+
 </html>
+

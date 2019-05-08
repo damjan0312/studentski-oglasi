@@ -22,3 +22,5 @@ Auth::routes(['verify' => true]);
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::get('/profil','HomeController@profile')->name('profile');
+
+Route::get('/dodajOglas', 'HomeController@ad')->name('ad');

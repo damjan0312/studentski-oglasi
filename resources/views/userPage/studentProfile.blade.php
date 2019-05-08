@@ -2,7 +2,8 @@
 @section ('content')
 
 <!-- body --->
-
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/profil.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/profilPanelTab.css')}}">
 
 <section id="profile-section" class="text-dark">
 

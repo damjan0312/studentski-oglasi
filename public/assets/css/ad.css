@@ -1,0 +1,78 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: rgb(223, 223, 223);
+    height: 100%;
+}
+#ad-section{
+    padding-top: 10%;
+   
+}
+#ad-section {
+    background: url("https://www.flurmagazine.com/wp-content/uploads/2016/11/belgrade-serbia-city-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 40px;
+    min-height: 100%;
+
+ }
+
+#step1{
+ 
+   border-bottom: 2px solid rgb(255, 97, 23);
+}
+
+#step1:hover{
+    border-bottom: 2px solid rgb(255, 97, 23);
+    border-top: 1px solid rgb(255, 97, 23);
+ }
+
+ #step2{
+    border-bottom: 2px solid rgb(255, 97, 23);
+ }
+ 
+ #step2:hover{
+     border-bottom: 2px solid rgb(255, 97, 23);
+     border-top: 1px solid rgb(255, 97, 23);
+  }
+
+
+  #step3{
+    border-bottom: 2px solid rgb(255, 97, 23);
+ }
+ 
+ #step3:hover{
+     border-bottom: 2px solid rgb(255, 97, 23);
+     border-top: 1px solid rgb(255, 97, 23);
+  }
+
+  #btn_next{
+      background-color: rgb(255, 97, 23);
+
+      width: 200px;
+  }
+
+  #btn_previous{
+    background-color: rgb(255, 97, 23);
+
+    width: 200px;
+}
+#submit{
+    background-color: rgb(255, 97, 23);
+
+    width: 200px;
+}
+
+#description{
+    max-height: 200px;
+}
+
+.active{
+    color: rgb(255, 97, 23);
+    border-top: 2px solid rgb(255, 97, 23);
+}
+
+

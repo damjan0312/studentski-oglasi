@@ -1,21 +1,19 @@
-html{
-  height: 100%;
-}
 body {
-  background-color: rgb(223, 223, 223);
-  height: 100%;
-   }
-
-#profile-section  {
-  background: url("https://www.flurmagazine.com/wp-content/uploads/2016/11/belgrade-serbia-city-wallpaper.jpg");
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  background: url("../../assets/img/img2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding-bottom: 40px;
-  min-height: 100%;
+  min-height: 760px; }
 
-}
-
+#profile-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 760px;
+  background-color: rgba(0, 0, 0, 0.5); }
 
 #profile-section .home-inner {
   padding-top: 150px; }

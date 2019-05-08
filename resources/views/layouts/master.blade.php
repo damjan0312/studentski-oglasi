@@ -10,8 +10,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/registration.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/masterProfile.css')}}">
 
 
     <!-- FONTS GOOGLE-->
@@ -54,7 +53,7 @@
                             <a href="#" class="nav-link">Pogledaj oglase</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">+Postavi oglas</a>
+                            <a href="{{route('login')}}" class="nav-link">+Postavi oglas</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">O nama</a>
@@ -67,7 +66,9 @@
             </div>
         </nav>
 
-    </div>
+</div>
     @yield('content')
+    @include('layouts.footer')
 </body>
+
 </html>

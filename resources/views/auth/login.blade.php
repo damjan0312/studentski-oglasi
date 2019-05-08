@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section ('content')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
 
 <section id="home-section">
         <div class="dark-overlay">
@@ -50,7 +51,7 @@
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
                                     <div class="form-group row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
 
                                             @if ($errors->has('email'))
@@ -62,7 +63,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                      <div class="col-md-6">
+                                      <div class="col-md-12">
                                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Lozinka" required>
 
                                             @if ($errors->has('password'))
@@ -74,7 +75,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <div class="col-md-6 offset-md-4">
+                                        <div class="float-left ml-3">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -88,12 +89,12 @@
 
                                 </form>
                                 @if (Route::has('password.request'))
-                                   <a class="btn btn-link" href="{{ route('password.request') }}">
+                                   <a class="btn btn-link" style="color:white;" href="{{ route('password.request') }}">
                                        {{ __('Zaboravili ste lozinku?') }}
                                    </a>
                                @endif
                                 <p class="p-4" style="opacity:0.7;">Nemate nalog? <a href="{{route('registration')}}"
-                                        style="color: white; font-size:15px;">Registruj se!</a></p>
+                                        style="color: white; font-size:15px;">Registrujte se!</a></p>
 
                             </div>
                         </div>

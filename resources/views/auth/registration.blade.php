@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section ('content')
 
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/registration.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
+
+
     <section id="home-section">
         <div class="dark-overlay">
             <div class="home-inner container">
@@ -16,7 +20,7 @@
 
                                     <div class="form-group row">
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                             <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Ime" required autofocus>
 
                                             @if ($errors->has('name'))
@@ -30,7 +34,7 @@
                                     <div class="form-group row">
 
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                             <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" placeholder="Prezime" required autofocus>
 
                                             @if ($errors->has('last_name'))
@@ -45,7 +49,7 @@
                                     <div class="form-group row">
 
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required>
 
                                             @if ($errors->has('email'))
@@ -59,7 +63,7 @@
                                     <div class="form-group row">
 
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Lozinka" required>
 
                                             @if ($errors->has('password'))
@@ -73,20 +77,20 @@
                                     <div class="form-group row">
 
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Potvrdite lozinku" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12 pl-5 pr-5">
                                            <input type="radio" name="student-izdavac" value="0"> Student
                                            <input type="radio" name="student-izdavac" value="1"> Izdavac
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-0">
-                                        <div class="col-md-6 offset-md-4">
+                                        <div class="ml-auto mr-auto">
                                             <input type="submit" class="btn btn-outline-light float-right" value="Registruj se" >
 
                                           </input>

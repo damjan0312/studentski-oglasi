@@ -1,4 +1,13 @@
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+}
+
 #home-section .home-inner {
+  padding-bottom: 40px;
+  min-height: 100%;
   padding-top: 100px; }
 
 #personalInformation {
