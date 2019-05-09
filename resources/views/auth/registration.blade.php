@@ -84,8 +84,8 @@
 
                                     <div class="form-group row">
                                         <div class="col-md-12 pl-5 pr-5">
-                                           <input type="radio" name="student-izdavac" value="0"> Student
-                                           <input type="radio" name="student-izdavac" value="1"> Izdavac
+                                           <input type="radio" name="student" value="0"> Student
+                                           <input type="radio" name="student" value="1"> Izdavac
                                         </div>
                                     </div>
 

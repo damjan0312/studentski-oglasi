@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function profile()
     {
-      $role='student-izdavac';
+      $role='student';
       if(Auth::user()->$role== false)
       {
         return view('userPage.studentProfile');
