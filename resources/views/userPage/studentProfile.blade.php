@@ -29,10 +29,16 @@
             </div>
           </div>
           <div class="col my-4"  style="border-top: 3px solid; border-color: rgba(236, 99, 19);">
-            <p>Ime:</p>
-            <p>Prezime</p>
-            <p>Tip korisnika:</p>
-            <p>E-mail adresa:</p>
+            <p>Ime: {{($user->name)}}</p>
+            <p>Prezime: {{($user->last_name)}}</p>
+            <p>Tip korisnika:
+              @if($user->student==false)
+                Student
+              @else
+                Izdavac
+              @endif
+            </p>
+            <p>E-mail adresa: {{($user->email)}}</p>
             <p>Broj telefona: </p>
             <p>Fakultet</p>
             <p>Godina studiranja:</p>
@@ -62,13 +68,13 @@
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Ime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value="John">
+                        <input class="form-control" type="text" value={{$user->name}}>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Prezime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value="Cena">
+                        <input class="form-control" type="text" value={{$user->last_name}}>
                       </div>
                     </div>
                     <div class="form-group">

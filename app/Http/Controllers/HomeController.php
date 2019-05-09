@@ -25,24 +25,25 @@ class HomeController extends Controller
     public function index()
     {
     /*  $login;
-        if(Auth::check()==1)  
+        if(Auth::check()==1)
           $login='layouts.masterProfile';
         else
           $login='layouts.master'; */
-          
-          $login='layouts.masterProfile';
+
+        $login='layouts.masterProfile';
         return view('mainPage.index', compact('login'));
     }
 
     public function profile()
     {
-      $role='student-izdavac';
+      $role='student';
+      $user=Auth::user();
       if(Auth::user()->$role== false)
       {
-        return view('userPage.studentProfile');
+        return view('userPage.studentProfile',compact('user'));
       }
       else {
-          return view('userPage.publisherProfile');
+          return view('userPage.publisherProfile',compact('user'));
       }
     }
 
@@ -51,7 +52,7 @@ class HomeController extends Controller
       return view('userPage.adPages.adPage');
     }
 
-    
+
 
 
 }
