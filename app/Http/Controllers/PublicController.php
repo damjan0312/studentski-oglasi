@@ -26,4 +26,11 @@ class PublicController extends Controller
     {
       return view('auth.verify');
     }
+
+    public function seeAdPage()
+    {
+      $login = 'layouts.master';
+      return view('userPage.adPages.seeAdPage', compact('login'));
+    }
+
 }
