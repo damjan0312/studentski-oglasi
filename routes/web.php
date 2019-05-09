@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'PublicController@index')->name('welcome');
+Route::get('/', 'PublicController@index')->name('index');
 Route::get('/prijava', 'PublicController@login')->name('login');
 Route::get('/registracija', 'PublicController@registration')->name('registration');
 Route::get('/verifikacija', 'PublicController@verify')->name('verify');
@@ -24,3 +24,5 @@ Auth::routes(['verify' => true]);
 Route::get('/profil','HomeController@profile')->name('profile');
 
 Route::get('/dodajOglas', 'HomeController@ad')->name('ad');
+
+Route::get('/index', 'HomeController@index')->name('index');
