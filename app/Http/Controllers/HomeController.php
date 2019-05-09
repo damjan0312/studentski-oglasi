@@ -24,7 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+    /*  $login;
+        if(Auth::check()==1)  
+          $login='layouts.masterProfile';
+        else
+          $login='layouts.master'; */
+          
+          $login='layouts.masterProfile';
+        return view('mainPage.index', compact('login'));
     }
 
     public function profile()
@@ -43,6 +50,8 @@ class HomeController extends Controller
     {
       return view('userPage.adPages.adPage');
     }
+
+    
 
 
 }

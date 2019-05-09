@@ -8,7 +8,8 @@ class PublicController extends Controller
 {
     public function index()
     {
-      return view('welcome');
+      $login = 'layouts.master';
+      return view('mainPage.index', compact('login'));
     }
 
     public function login()
