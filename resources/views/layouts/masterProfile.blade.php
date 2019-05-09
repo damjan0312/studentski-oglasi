@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Pogledaj oglase</a>
+                            <a href="{{route('index')}}"  class="nav-link">Pogledaj oglase</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('ad')}}"  class="nav-link">+Postavi oglas</a>

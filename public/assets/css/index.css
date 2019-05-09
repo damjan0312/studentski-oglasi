@@ -10,10 +10,31 @@ body{
 }
 
 #search-section{
-    min-height: 60%;
-    background: url("https://baumit.rs/files/cz/references/526-non-residen-campus-8.jpg");
+    min-height: 70%;
+    background: url("http://blog.bprgroup.it/wp-content/uploads/2014/08/Office.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: 50% 50%; 
+}
+  
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 70%;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+   }
+
+.search-container{
+    background-color: white;
+    height: 150px;
+    width: 700px;
+
+    border-radius: 50px;
+
+    -webkit-box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
+    box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
 }
