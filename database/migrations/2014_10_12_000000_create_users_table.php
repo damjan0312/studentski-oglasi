@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
           $table->string('password');
           $table->boolean('admin')->default(false);
           $table->boolean('student');
+          $table->string('phoneNumber')->default('');
+          $table->integer('numberOfAds')->default(0);
           $table->rememberToken();
           $table->timestamps();
         });
