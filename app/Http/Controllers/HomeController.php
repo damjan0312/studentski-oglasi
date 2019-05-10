@@ -71,6 +71,12 @@ class HomeController extends Controller
       return view('userPage.adPages.adPage');
     }
 
+    public function seeAdPage()
+    {
+      $login = 'layouts.masterProfile';
+      return view('userPage.adPages.seeAdPage', compact('login'));
+    }
+
 
 
 

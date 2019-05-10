@@ -11,9 +11,109 @@ body{
 
 #search-section{
     min-height: 60%;
-    background: url("https://baumit.rs/files/cz/references/526-non-residen-campus-8.jpg");
+    background: url("http://blog.bprgroup.it/wp-content/uploads/2014/08/Office.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: 50% 50%; 
+    width: 100%;
+
+    
 }
+  
+.dark-overlay {
+    position: absolute;
+    margin:0;
+    width: 100%;
+    min-height: 60%;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+   }
+
+.search-container{
+    background-color: white;
+    height: 150px;
+    width: 700px;
+
+    border-radius: 50px;
+
+    
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    -webkit-box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
+    box-shadow: 14px -11px 22px 3px rgba(0,0,0,0.75);
+}
+
+.btn-search{
+    background-color: rgb(253, 115, 51);
+}
+
+.btn-search:hover{
+    background-color: rgb(250, 81, 2);
+}
+
+#ad-section{
+    background: rgb(241, 241, 241);
+    width: 100%;
+    min-height: 60%;
+
+    border-top: rgb(228, 91, 12) 3px solid;
+}
+.newest-ads{
+    min-height: 30%;
+
+    padding: 30px;
+
+    
+}
+.popular-ads{
+    min-height: 30%;
+    background-color: green;
+}
+
+#newest-ads-row .col-md-3 {
+    min-height: 100%;
+}
+#newest-ads-row .col-md-3 .ad .card{
+    transition: background-color 1.1s ease;
+    background-color: rgb(241, 241, 241);
+}
+
+
+#newest-ads-row .col-md-3 .ad .card:hover {
+    transition: background-color  1s ease;
+    background-color: rgb(252, 168, 119);
+}
+#ad-link{
+    color:rgb(228, 91, 12);
+    text-decoration: none;
+}
+
+
+#ad-link:hover{
+
+    transition: color 0.5s ease;
+    color:rgb(34, 34, 34);
+}
+
+
+@media only screen and (max-width: 700px) {
+    #newest-ads-row .col-sm-3 .ad .card p{
+        display: none;
+    }
+    #newest-ads-row .col-sm-3 .ad .card h4{
+        font-size: 1em;
+
+    }
+  }
+
+  @media only screen and (max-width: 970px) {
+    #newest-ads-row .col-sm-3 .ad .card p{
+       display:none;
+    }
+    #newest-ads-row .col-sm-3 .ad .card h4{
+        font-size: 1em;
+
+    }
+  }
