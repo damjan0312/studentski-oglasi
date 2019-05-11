@@ -4,7 +4,7 @@
 
 <!-- K O M E N T A R -->
 
-<!-- Sve labele su nazvane lbl_... primer(lbl_headline - naslov oglasa) -->
+<!-- Sve labele su nazvane lbl_... primer(lbl_headline - naslov oglasa) ---->
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/seeAdPage.css')}}">
 
