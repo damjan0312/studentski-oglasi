@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth ;
+use Illuminate\Support\Facades\Input;
+
+
 
 class HomeController extends Controller
 {
@@ -45,6 +48,22 @@ class HomeController extends Controller
       else {
           return view('userPage.publisherProfile',compact('user'));
       }
+    }
+
+    public function store(Request $request)
+    {
+        if(Auth::user()->student==true)
+        {
+          $input=Input::only('name','last_name','email','phoneNumber');
+          Auth::user()->name=$input['name'];
+          Auth::user()->last_name=$input['last_name'];
+          Auth::user()->email=$input['email'];
+          Auth::user()->phoneNumber=$input['phoneNumber'];
+          Auth::user()->save();
+          $user=Auth::user();
+          return view('userPage.publisherProfile',compact('user'));
+        }
+
     }
 
     public function ad()

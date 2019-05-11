@@ -77,18 +77,12 @@
                         <input class="form-control" type="text" value={{$user->last_name}}>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label class="col-lg-3 control-label">Tip korisnika:</label>
-                      <div class="col-lg-8">
-                        <input class="" type="radio" value="Student" name="tip">Student
-                        <input class="" type="radio" value="Izdavac" name="tip">Izdavac
-                      </div>
-                    </div>
+
 
                     <div class="form-group">
                       <label class="col-lg-3 control-label">E-mail adresa:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value="johnCena@gmail.com">
+                        <input class="form-control" type="text" value={{$user->email}}>
                       </div>
                     </div>
 
@@ -98,7 +92,7 @@
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Broj telefona:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value="25641588">
+                        <input class="form-control" type="text" value={{$user->phoneNumber}}>
                       </div>
                     </div>
                     <div class="form-group">

@@ -27,7 +27,8 @@ Route::get('/dodajOglas', 'HomeController@ad')->name('ad');
 
 Route::get('/index', 'HomeController@index')->name('index');
 
+Route::resource('updateProfil','HomeController');
+
+
 Route::get('/oglas', 'PublicController@seeAdPage')->name('seeAdPage');
 Route::get('/oglas', 'HomeController@seeAdPage')->name('seeAdPage');
-
-
