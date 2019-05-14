@@ -1,4 +1,4 @@
-@extends('layouts.masterProfile')
+@extends('layouts.masterProfileStudent')
 @section ('content')
 
 <!-- body --->

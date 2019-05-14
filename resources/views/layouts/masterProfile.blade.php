@@ -45,7 +45,7 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-                <a href="index.html" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
+                <a href="index" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
                     Studentski oglasi</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,14 +53,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
+                  
                         <li class="nav-item">
                             <a href="{{route('index')}}"  class="nav-link">Pogledaj oglase</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('ad')}}"  class="nav-link">+Postavi oglas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">O nama</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

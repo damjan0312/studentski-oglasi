@@ -5,12 +5,16 @@
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- CSS -->
+    
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/masterProfile.css')}}">
+    
+
 
 
     <!-- FONTS GOOGLE-->
@@ -49,23 +53,50 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
+
                         <li class="nav-item">
-                            <a href="{{route('index')}}" class="nav-link">Pogledaj oglase</a>
+                            <a href="{{route('studentAd')}}"  class="nav-link">Pogledaj studentske oglase</a>
+                        </li>
+                  
+                        <li class="nav-item">
+                            <a href="{{route('index')}}"  class="nav-link">Pogledaj stanove</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('login')}}" class="nav-link">+Postavi oglas</a>
+<!--VODI NA BUDUCU STRANU ZA DODAVANJE STUD. OGLASA -->  <a href=""  class="nav-link">+Postavi oglas</a>
                         </li>
-                        <li class="nav-item">
-                            <a id="signInLink" href="{{route('login')}}" class="nav-link active">Prijavi se</a>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    {{ __('Profil') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Odjavi se') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+
+
+                                
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-</div>
+    </div>
     @yield('content')
     @include('layouts.footer')
 </body>
 
+
 </html>
+
