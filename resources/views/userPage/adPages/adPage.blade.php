@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ad.css')}}">
 
+
 <section id="ad-section" class="text-dark">
 
     <div class="dark-overlay">
@@ -24,7 +25,7 @@
                                      <button id="btn_next" class="btn float-right" style="display:block;">Dalje</button>
                                      <button id="btn_previous" class="btn float-left" style="display:none;">Nazad</button>
                                 </div>
-                                
+
 
                                 <form action="" class="pt-5 ">
                                 <hr>
@@ -39,7 +40,7 @@
                                                     <option value="kuca">Kuca</option>
                                                     <option value="soba">Soba</option>
                                                     </select>
-            
+
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +68,7 @@
                                         <b class="float-left h4"> BROJ KVADRATA </b>
                                         <input type="text" class="form-control"
                                                     placeholder="Broj kvadrata" name="number">
-        
+
                                             </div>
                                         </div>
 
@@ -85,7 +86,7 @@
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
                                                 </select>
-        
+
                                             </div>
                                         </div>
 
@@ -97,7 +98,7 @@
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 </select>
-        
+
                                             </div>
                                         </div>
 
@@ -111,7 +112,7 @@
                                                     <option value="samostalno">Samostalno (TA pec, klima)</option>
                                                     <option value="drva">Grejanje na drva</option>
                                                     </select>
-            
+
                                                 </div>
                                         </div>
 
@@ -135,11 +136,11 @@
                                               <input id="cb-parking" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
                                             </div>
                                         </div>
-                                        
+
                                         </div>
 
-                                    
-                                        
+
+
                                         <!--!!!!!!!!!!!!!!!!!! KRAJ col-sm-6 prvog -->
 
 
@@ -152,7 +153,7 @@
                                                                 placeholder="" name="number">
                                                 </div>
                                             </div>
-                                           
+
                                             <div class="d-flex">
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> OPIS </b>
@@ -184,32 +185,32 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <hr/>
 
-                                         
-                                            
+
+
                                         </div>
 
 
 
                                         <!-- !!!!!!!!!!!!!!!!!!!! kraj col-md-6 drugog -->
-                                        
+
                                 <!-- kraj basic - info -->
                                     </div>
 
 
 
-                                    <!-- pocetak dela za fotografije --> 
+                                    <!-- pocetak dela za fotografije -->
                                     <div id="photo-part" class="mt-4" style="display:none;">
 
-                                        <input type="file" name="files[]" multiple > 
+                                        <input type="file" name="files[]" multiple >
 
                                     </div>
 
 
                                     <!-- kraj dela za fotografije -->
-                                   
+
 
                                     <!-- pocetak dela za kraj -->
 
@@ -222,16 +223,16 @@
                                     <!-- kraj dela za kraj -->
 
                                     <!-- BTN KRAJ-->
-                                    <input type="submit" id="submit" class="btn  float-right" 
+                                    <input type="submit" id="submit" class="btn  float-right"
                                     value="Kraj" style="display: none;">
                                     <!-- prikazati submit dugme tek na 3. tablici-->
 
                                 </form>
 
                                 <!--BTN DALJE-->
-                                
-                               
-                               
+
+
+
                             </div>
 
 
