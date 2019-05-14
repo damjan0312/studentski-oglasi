@@ -1,0 +1,55 @@
+
+#site-map a{
+    color: white;
+    text-decoration: none;
+
+    transition: all .2s ease-in-out;
+
+    transition: color 0.5s;
+    color: white;
+    
+}
+
+#site-map a:hover{
+    transform: scale(1.1);
+    transition: color 0.5s;
+    color: rgba(236, 99, 19, 0.7);
+
+}
+
+#second-row{
+    border-top: 1px solid #ccc;
+}
+
+
+#second-row a{
+    padding-top: 10px;
+    color: white;
+    opacity: 0.6;
+}
+
+#second-row a:hover{
+    transition: color 0.2s, opacity 0.2s;
+    color : rgba(236, 99, 19, 0.7);
+    opacity: 1;
+}
+#icon-university{
+    color : rgba(236, 99, 19, 0.7);
+}
+#group-name{
+    color : rgba(236, 99, 19, 0.7);
+}
+
+
+#loading:hover {
+    -webkit-animation: rotation 2.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+            -webkit-transform: rotate(0deg);
+    }
+    to {
+            -webkit-transform: rotate(359deg);
+    }
+}

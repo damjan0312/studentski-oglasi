@@ -59,8 +59,11 @@
                         <li class="nav-item">
                             <a href="{{route('login')}}" class="nav-link">+Postavi oglas</a>
                         </li>
-                        <li class="nav-item">
-                            <a id="signInLink" href="{{route('login')}}" class="nav-link active">Prijavi se</a>
+                        <li class="nav-item ml-2">
+                            <a id="signInLink" href="{{route('login')}}" class="nav-link active">
+                                <i class="fas fa-user-plus"></i>
+                                Prijavi se
+                            </a>
                         </li>
                     </ul>
                 </div>

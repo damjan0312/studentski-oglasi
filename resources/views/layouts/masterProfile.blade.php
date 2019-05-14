@@ -46,8 +46,11 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-                <a href="index" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
-                    Studentski oglasi</a>
+                <a href="index" class="navbar-brand text-uppercase"> 
+                    <i id="logo-s" class="fab fa-stripe-s fa-2x"> 
+                    <i id="logo-o" class="fab fa-osi"></i>
+
+                    </i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -65,17 +68,22 @@
                             <a href="{{route('ad')}}"  class="nav-link">+Postavi oglas</a>
                         </li>
                         <li class="nav-item dropdown">
+                        
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-user-tie"></i>    
                                 {{ Auth::user()->name }} <span class="caret"></span>
+                                
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">
+                                    <i class="fas fa-id-card"></i>
                                     {{ __('Profil') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
+                                                 <i class="fas fa-sign-out-alt"></i>
                                     {{ __('Odjavi se') }}
                                 </a>
 
