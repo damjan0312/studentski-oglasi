@@ -52,4 +52,19 @@ class PublicController extends Controller
       
     }
 
+
+    public function studentAd()
+    {
+      if($user = Auth::user())
+      {
+        $login = 'layouts.masterProfile';
+        return view('userPage.studentAds.studentAd', compact('login'));
+      }
+      else{
+        $login = 'layouts.master';
+        return view('userPage.studentAds.studentAd', compact('login'));
+      }
+      
+    }
+
 }

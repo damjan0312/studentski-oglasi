@@ -49,6 +49,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
+                    
+                    <li class="nav-item">
+                            <a href="{{route('studentAd')}}" class="nav-link">Pogledaj studentske oglase</a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{route('index')}}" class="nav-link">Pogledaj oglase</a>
                         </li>

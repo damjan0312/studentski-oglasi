@@ -94,6 +94,8 @@ class HomeController extends Controller
       return view('userPage.adPages.seeAdPage', compact('login'));
     }
 
+    
+
 
 
 

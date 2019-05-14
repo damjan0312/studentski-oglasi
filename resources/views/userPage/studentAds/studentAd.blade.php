@@ -1,4 +1,4 @@
-@extends('layouts.masterProfile')
+@extends($login)
 
 @section('content')
 
