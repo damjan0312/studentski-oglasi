@@ -101,7 +101,7 @@
                                     <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
                                     <hr>
                                     <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="">Pogledaj oglas</a>
+                                    <a  id="ad-link" href="{{route('seeAdPage')}}">Pogledaj oglas</a>
                                     </div>
                                      </div>
                              <!-- kraj kartice -->

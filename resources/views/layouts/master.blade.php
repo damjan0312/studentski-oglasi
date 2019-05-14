@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Studentski oglasi - Registracija</title>
+    <title>Studentski oglasi</title>
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -41,7 +41,7 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-                <a href="index.html" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
+                <a href="index" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
                     Studentski oglasi</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,9 +54,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('login')}}" class="nav-link">+Postavi oglas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">O nama</a>
                         </li>
                         <li class="nav-item">
                             <a id="signInLink" href="{{route('login')}}" class="nav-link active">Prijavi se</a>

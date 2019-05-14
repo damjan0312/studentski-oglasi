@@ -118,13 +118,13 @@
                 <div class="d-flex">
                     <b class="h5 mt-2 ml-3">Ulica:</b>
 
+
                 <hr>
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_heating" for=""> <b>GREJANJE: </b></label>
     <!-- test example -->  <label class="ml-4" for=""> Centralno grejanje </label>
                     </div>
-
                 </div>
                 <hr>
                 <div class="d-flex">
@@ -142,19 +142,11 @@
                 </div>
                 <hr>
 
-
-
-
-
-
-
-=======
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_airCondition" for=""> <b>KLIMA UREDJAJ: </b></label>
     <!-- test example -->  <label class="ml-4" for=""> Da </label>
                     </div>
->>>>>>> 07f0bdf05f0cdd1d8c3ff8e02552db6dc100234f
                 </div>
                 <hr>
                 <div class="d-flex">
