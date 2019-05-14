@@ -39,10 +39,10 @@
               @endif
             </p>
             <p>E-mail adresa: {{($user->email)}}</p>
-            <p>Broj telefona: </p>
-            <p>Fakultet</p>
-            <p>Godina studiranja:</p>
-            <p>Broj postavljenih oglasa:</p>
+            <p>Broj telefona: {{$user->phoneNumber}} </p>
+            <p>Fakultet: {{$student->faculty}}</p>
+            <p>Godina studiranja: {{$student->yearOfStudy}}</p>
+            <p>Broj postavljenih oglasa: {{($user->numberOfAds)}}</p>
           </div>
 
         </div>
@@ -61,70 +61,59 @@
 
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <!-- UREDI PROFIL -->
-              <form class="form-horizontal" role="form">
+              <form class="form-horizontal"  method="POST" action="/updateProfil">
+                @csrf
                 <div class=" row">
 
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Ime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value={{$user->name}}>
+                        <input class="form-control" name="name" type="text" value={{$user->name}}>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Prezime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value={{$user->last_name}}>
+                        <input class="form-control" name="last_name" type="text" value={{$user->last_name}}>
                       </div>
                     </div>
-
 
                     <div class="form-group">
                       <label class="col-lg-3 control-label">E-mail adresa:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value={{$user->email}}>
+                        <input class="form-control" name="email" type="text" value={{$user->email}}>
                       </div>
                     </div>
 
-                  </div>
 
-                  <div class="col-sm-6">
+
                     <div class="form-group">
-                      <label class="col-lg-3 control-label">Broj telefona:</label>
+                      <label class="col-lg-3 control-label">Broj Telefona:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value={{$user->phoneNumber}}>
+                        <input class="form-control" name="phoneNumber" type="text" value={{$user->phoneNumber}}>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Fakultet:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" value="Elektronski fakultet">
+                        <input class="form-control" type="text" name="faculty" value={{$student->faculty}}>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Godina studiranja:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="number" value="3">
+                        <input class="form-control" type="number" name="yearOfStudy" value={{$student->yearOfStudy}}>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label">Lozinka:</label>
-                      <div class="col-md-8">
-                        <input class="form-control" type="password" value="11111122333">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label">Potvrdite lozinku:</label>
-                      <div class="col-md-8">
-                        <input class="form-control" type="password" value="11111122333">
-                      </div>
-                    </div>
+
+
                     <div class="form-group">
                       <label class="col-md-3 control-label"></label>
                       <div class="col-md-8">
-                        <input type="button" class="btn btn-outline-success" value="Save Changes" >
+                        <button type="submit" class="btn btn-outline-success" value="Save Changes" >Sačuvaj</button>
                         <span></span>
-                        <input type="reset" class="btn btn-outline-danger" value="Cancel" style="margin-top:2px;">
+
                       </div>
                     </div>
 
@@ -132,7 +121,8 @@
 
                 </div>
               </form>
-              <!-- UREDI PROFIL -->
+
+
 
             </div>
 

@@ -106,8 +106,7 @@
                       <div class="col-md-8">
                         <button type="submit" class="btn btn-outline-success" value="Save Changes" >Sačuvaj</button>
                         <span></span>
-                        <button type="reset" class="btn btn-outline-danger" value="Cancel" style="margin-top:2px;">Restratuj
-                        </button>
+
                       </div>
                     </div>
 

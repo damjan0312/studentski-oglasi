@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -43,7 +45,8 @@ class HomeController extends Controller
       $user=Auth::user();
       if(Auth::user()->$role== false)
       {
-        return view('userPage.studentProfile',compact('user'));
+        $student=Student::where('id', $user->id)->first();
+        return view('userPage.studentProfile',compact('user','student'));
       }
       else {
           return view('userPage.publisherProfile',compact('user'));
@@ -62,6 +65,20 @@ class HomeController extends Controller
           Auth::user()->save();
           $user=Auth::user();
           return view('userPage.publisherProfile',compact('user'));
+        }
+        else {
+          $input=Input::only('name','last_name','email','phoneNumber','faculty','yearOfStudy');
+          Auth::user()->name=$input['name'];
+          Auth::user()->last_name=$input['last_name'];
+          Auth::user()->email=$input['email'];
+          Auth::user()->phoneNumber=$input['phoneNumber'];
+          Auth::user()->save();
+          $user=Auth::user();
+          $student=Student::where('id', $user->id)->first();
+          $student->faculty=$input['faculty'];
+          $student->yearOfStudy=$input['yearOfStudy'];
+          $student->save();
+          return view('userPage.studentProfile',compact('user','student'));
         }
 
     }

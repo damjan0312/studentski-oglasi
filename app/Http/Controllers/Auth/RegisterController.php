@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Publisher;
+use App\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -77,6 +78,11 @@ class RegisterController extends Controller
         ]);
         if($data['student']==1){
           Publisher::create([
+            'id'=>DB::table('users')->where('email', $data["email"])->first()->id,
+          ]);
+        }
+        else {
+          Student::create([
             'id'=>DB::table('users')->where('email', $data["email"])->first()->id,
           ]);
         }

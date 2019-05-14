@@ -6,7 +6,7 @@
 
 <div class="home-container">
 
-<section id="bg-section"> 
+<section id="bg-section">
 
     <section id="ad-section" class="text-dark">
         <div id="section-div">
@@ -26,7 +26,7 @@
                         <li style="background: #aaa;">SLIDE 2</li>
                         <li>SLIDE 3</li>
                         <li style="background: #aaa;">SLIDE 4</li>
-                    </ul>  
+                    </ul>
                     </div>
 
 
@@ -42,11 +42,11 @@
                 <div class="d-flex">
                     <b class="h4 mt-2">LOKACIJA:</b>
                 </div>
-                    
+
 
                 <div class="d-flex">
                     <b class="h5 mt-2 ml-3">Ulica:</b>
-                    
+
                 </div>
                 <div class="d-flex">
                      <b class="h5 mt-2 ml-3">Broj:</b>
@@ -59,8 +59,8 @@
                 </div>
                 <hr>
 
-                    
-                    
+
+
 
 
 
