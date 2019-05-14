@@ -41,8 +41,11 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-                <a href="index" class="navbar-brand"> <i id="logo" class="fas fa-graduation-cap fa-2x"></i>
-                    Studentski oglasi</a>
+            <a href="index" class="navbar-brand text-uppercase"> 
+                    <i id="logo-s" class="fab fa-stripe-s fa-2x"> 
+                    <i id="logo-o" class="fab fa-osi"></i>
+
+                    </i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
