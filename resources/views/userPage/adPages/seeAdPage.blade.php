@@ -10,11 +10,7 @@
 
 <div class="home-container">
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 07f0bdf05f0cdd1d8c3ff8e02552db6dc100234f
     <section id="ad-section" class="text-dark">
 
         <div id="section-div">
@@ -44,7 +40,7 @@
 
 
                     <div id="slider">
-<<<<<<< HEAD
+
                     <a href="#" class="control_next">></a>
                     <a href="#" class="control_prev"><</a>
                     <ul>
@@ -53,7 +49,7 @@
                         <li>SLIDE 3</li>
                         <li style="background: #aaa;">SLIDE 4</li>
                     </ul>
-=======
+
                         <a href="#" class="control_next">></a>
                         <a href="#" class="control_prev"><</a>
                         <ul>
@@ -68,7 +64,7 @@
                     <p id="ad-updated-text" sclass="text-dark"><small>Postavio korisnik: <a  id="user" href="">@izdavac1</a></small></p>
                     <div class="col-sm text-justify" id="description-text">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
->>>>>>> 07f0bdf05f0cdd1d8c3ff8e02552db6dc100234f
+
                     </div>
                 </div>
 
@@ -116,20 +112,19 @@
     <!-- test example -->  <label class="ml-4" for=""> 2 </label>
                     </div>
                 </div>
-<<<<<<< HEAD
+
 
 
                 <div class="d-flex">
                     <b class="h5 mt-2 ml-3">Ulica:</b>
 
-=======
+
                 <hr>
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_heating" for=""> <b>GREJANJE: </b></label>
     <!-- test example -->  <label class="ml-4" for=""> Centralno grejanje </label>
                     </div>
->>>>>>> 07f0bdf05f0cdd1d8c3ff8e02552db6dc100234f
                 </div>
                 <hr>
                 <div class="d-flex">
@@ -146,20 +141,12 @@
                     </div>
                 </div>
                 <hr>
-<<<<<<< HEAD
 
-
-
-
-
-
-=======
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_airCondition" for=""> <b>KLIMA UREDJAJ: </b></label>
     <!-- test example -->  <label class="ml-4" for=""> Da </label>
                     </div>
->>>>>>> 07f0bdf05f0cdd1d8c3ff8e02552db6dc100234f
                 </div>
                 <hr>
                 <div class="d-flex">
