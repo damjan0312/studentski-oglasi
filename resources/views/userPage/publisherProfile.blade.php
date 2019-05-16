@@ -86,7 +86,7 @@
                     <div class="form-group">
                       <label class="col-lg-3 control-label">E-mail adresa:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" name="email" type="text" value={{$user->email}}>
+                        <input class="form-control" name="email" type="text" value={{$user->email}} disabled>
                       </div>
                     </div>
 

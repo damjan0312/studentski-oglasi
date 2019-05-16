@@ -6,6 +6,21 @@ body {
   .navbar {
     border-bottom: rgba(236, 99, 19, 0.7) 3px solid;
     background-color: rgba(32, 32, 32, 0.7); }
+
+    #signInLink {
+      background-color: rgba(236, 99, 19, 0.7);
+      border-radius: 7px; 
+
+      transition: transform 0.5s;
+      transform: scale(1.0);
+      
+    }
+
+#signInLink:hover {
+    transition: transform 0.5s;
+    transform: scale(1.1);
+
+ }
   
   #home-section {
     background: url("../../assets/img/img1.jpg");
@@ -28,7 +43,8 @@ body {
   .card {
     background-color: rgb(255, 255, 255); }
   
-  #logo {
+  #logo-s {
+    padding:7px;
     background-color: rgba(236, 99, 19, 0.7);
     border-radius: 25px; }
   
@@ -44,4 +60,14 @@ body {
     color: rgba(236, 99, 19, 0.7); }
   
   /*# sourceMappingURL=login.css.map */
+
+  #navbarDropdown{
+    transition: transform 0.5s;
+    transform: scale(1.0);
+  }
+
+  #navbarDropdown:hover{
+    transition: transform 0.5s;
+    transform: scale(1.1);
+  }
   

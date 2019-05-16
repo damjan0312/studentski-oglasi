@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ad.css')}}">
 
+    
 
 <section id="ad-section" class="text-dark">
 
@@ -10,10 +11,14 @@
         <div class="home-inner container">
         <div class="row justify-content-center">
                     <div class="col-lg-12">
-                        <div class="card text-center card-form">
+                    
+                        <div id="cont" class="card text-center card-form">
                             <div class="card-body">
-                                <h3 class="display-5 pb-4">DODAJ OGLAS</h3>
-
+                                    <h3 class="display-5 pb-4 text-center">DODAJ OGLAS </h3>
+                                </div>
+                           
+                                
+                                
                                 <div class="row justify-content-center pb-3">
                                     <button class="btn  btn-lg ml-4 active" id="step1">1. Osnovni podaci</button>
                                     <button class="btn  btn-lg ml-4" id="step2">2. Fotografije</button>
@@ -31,7 +36,7 @@
                                 <hr>
                                     <div id="basic-info" class="row">
                                     <div class="col-md-6">
-                                        <div class="d-flex input-group">
+                                        <div class="d-flex input-group ml-4 pr-4">
                                             <div class="form-group" style="width: 100%;">
                                                 <div class="form-group " style="width: 100%">
                                                 <b class="float-left h3"> KATEGORIJA </b>
@@ -46,16 +51,17 @@
                                         </div>
 
                                         <hr />
-                                        <b class="float-left h3"> LOKACIJA </b>
+                                        
 
 
-                                        <div class="d-flex input-group">
+                                        <div class="d-flex input-group ml-4 pr-4">
+                                         <b class="float-left h3"> LOKACIJA </b>
                                             <div class="form-group" style="width: 100%;">
                                                 <input type="text" class="form-control" placeholder="Ulica"
                                                     name="street">
                                             </div>
                                         </div>
-                                        <div class="d-flex input-group">
+                                        <div class="d-flex input-group ml-4 pr-4">
                                             <div class="form-group" style="width: 100%;">
                                                 <input type="datetime" class="form-control"
                                                     placeholder="Broj" name="number">
@@ -63,7 +69,7 @@
                                         </div>
                                         <hr/>
 
-                                        <div class="d-flex">
+                                        <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ KVADRATA </b>
                                         <input type="text" class="form-control"
@@ -76,7 +82,7 @@
 
                                         <hr/>
 
-                                        <div class="d-flex">
+                                        <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ SOBA </b>
                                                 <select class="custom-select my-select">
@@ -90,7 +96,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="d-flex">
+                                        <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ KUPATILA </b>
                                                 <select class="custom-select my-select">
@@ -104,7 +110,7 @@
 
                                         <hr/>
 
-                                        <div class="d-flex">
+                                        <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                             <b class="float-left h4"> GREJANJE </b>
                                                     <select class="custom-select my-select">
@@ -118,7 +124,7 @@
 
                                         <hr/>
 
-                                        <div class="d-flex">
+                                        <div class="d-flex ml-4 pr-4">
                                             <div class="form-group ">
                                             <b class="float-left"> TV </b>
                                             <input id="cb-tv" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
@@ -146,7 +152,7 @@
 
                                         <div class="col-md-6 h-50">
                                             <!-- NASLOV OGLASA -->
-                                            <div class="d-flex">
+                                            <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> NASLOV OGLASA </b>
                                                     <input type="text" class="form-control"
@@ -154,7 +160,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="d-flex">
+                                            <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> OPIS </b>
                                                     <textarea type="text" class="form-control"
@@ -165,7 +171,7 @@
                                             <hr/>
 
 
-                                            <div class="d-flex">
+                                            <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                                     <div class="row">
                                                         <b class=" h4 ml-3"> CENA </b>

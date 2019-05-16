@@ -1,4 +1,4 @@
-@extends('layouts.masterProfile')
+@extends($login)
 
 @section('content')
 
@@ -15,6 +15,17 @@
 
             <div id="link-div" class="text-center">
                 <a href="#ad-section" id="ad-link" class="btn btn-success btn-lg">VIDI OGLASE</a>
+            </div>
+
+            <div id="add-studentAd" class="text-center">
+                <div class="d-flex justify-content-end">
+                    <a href="" id="add-studentAdLink" class="btn btn-success btn-lg hover-class">POSTAVI SVOJ OGLAS</a>
+                </div>
+                <div class="d-flex justify-content-end">
+                     <p id="add-studentAdNote" class="hover-class"> <small>*samo za korisnike ulogovane kao studenti</small></p>
+                </div>  
+              
+                
             </div>
 
            
