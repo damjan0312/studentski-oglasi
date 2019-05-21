@@ -33,3 +33,4 @@ Route::resource('updateProfil','HomeController');
 Route::get('/oglas', 'PublicController@seeAdPage')->name('seeAdPage');
 
 Route::get('/studentskiOglas', 'PublicController@studentAd')->name('studentAd');
+
