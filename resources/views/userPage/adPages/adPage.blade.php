@@ -28,8 +28,6 @@
 
                                   </div>
 
-                                  <img src="images/{{ Session::get('image') }}">
-
                                   @endif
 
 
@@ -189,7 +187,7 @@
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> INTERNET </b>
-                                              <input id="cb-internet" name="internet" type="checkbox" class="ml-2 form-control{{ $errors->has('internet') ? ' is-invalid' : '' }}" 
+                                              <input id="cb-internet" name="internet" type="checkbox" class="ml-2 form-control{{ $errors->has('internet') ? ' is-invalid' : '' }}"
                                                 style="float: left; margin-top: 5px;>">
                                               @if ($errors->has('internet'))
                                                  <span class="invalid-feedback" role="alert">
@@ -199,7 +197,7 @@
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> KLIMA UREDJAJ </b>
-                                              <input id="cb-klima"  name="airCondition" type="checkbox" class="ml-2 form-control{{ $errors->has('airCondition') ? ' is-invalid' : '' }}" 
+                                              <input id="cb-klima"  name="airCondition" type="checkbox" class="ml-2 form-control{{ $errors->has('airCondition') ? ' is-invalid' : '' }}"
                                               style="float: left; margin-top: 5px;>">
                                               @if ($errors->has('airCondition'))
                                                  <span class="invalid-feedback" role="alert">
@@ -342,7 +340,6 @@
     </div>
 
 </section>
-<script src="{{asset('assets/js/uploadAd.js')}}"></script>
 <script src="{{asset('assets/js/ad.js')}}"></script>
 <!-- <script src="{{asset('assets/js/uploadNewAd.js')}}"></script> --> <!-- SKRIPTA ZA UPLOAD PODATAKA NA SERVER -->
 

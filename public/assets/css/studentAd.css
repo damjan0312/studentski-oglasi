@@ -22,7 +22,6 @@ body{
     background-size: cover;
     background-attachment: fixed;
 
-    padding-bottom: 40px;
     min-height: 100%;
     padding-top: 150px;
     
@@ -55,7 +54,7 @@ body{
 }
 
 #ad-link{
-    margin-top:100px;
+    margin-top:20px;
 
     -webkit-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
