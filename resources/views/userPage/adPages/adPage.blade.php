@@ -165,9 +165,9 @@
                                                 <div class="form-group " style="width: 100%">
                                             <b class="float-left h4"> GREJANJE </b>
                                                     <select name="typeOfHeating" class="custom-select my-select">
-                                                    <option value="centralno">Centralno grejanje</option>
-                                                    <option value="samostalno">Samostalno (TA pec, klima)</option>
-                                                    <option value="drva">Grejanje na drva</option>
+                                                    <option value="Centralno grejanje">Centralno grejanje</option>
+                                                    <option value="Elektricna energija">Elektricna energija</option>
+                                                    <option value="Cvrsto gorivo">Cvrsto gorivo (drva,pelet,ugalj)</option>
                                                     </select>
 
                                                 </div>

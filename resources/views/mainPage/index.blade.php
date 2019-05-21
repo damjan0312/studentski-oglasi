@@ -74,72 +74,30 @@
                 </div>
                 <hr>
                 <div class="row" id="newest-ads-row">
-                    <div class="col-md-3 text-center">
+                    
 
-                    <!-- KARTICA-->
-                        <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
+                    @foreach ($ads as $ad)
                     <div class="col-md-3 text-center">
-                        <!-- KARTICA-->
-                        <div class="ad p-3">
+                    <div class="ad p-3">
                             <!-- pocetak kartice -->
                                     <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
+                                  
+                                    <img class="card-img-top img" src="{{URL::to('/')}}/images/{{$ad->id}}_0.jpg" alt="Card image cap">
+                                 
                                     <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
+                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
                                     <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="{{route('seeAdPage')}}">Pogledaj oglas</a>
+                                    <p class="card-text">{{$ad->description}}</p>
+                                    <a  id="ad-link" href="/oglas/{{$ad->id}}">Pogledaj oglas</a>
                                     </div>
                                      </div>
-                             <!-- kraj kartice -->
                         </div>
+                            <!-- kraj kartice -->
+                            </div>
+                    @endforeach
 
-                    </div>
-                    <div class="col-md-3 text-center">
-                         <!-- KARTICA-->
-                        <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                         <!-- KARTICA-->
-                         <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
+                       
+                    
                 </div>
 
 
@@ -147,80 +105,35 @@
     <!-- koristi isti css newewst-ads -->
             <div id="popular-ads" class="newest-ads">
                 <div class="row">
-                    <p class="h1 ml-5 mt-2 nowrap">POPULARNI OGLASI <i class="fas fa-fire" style="color: rgb(228, 91, 12);"></i></p>
+                    <p class="h1 ml-5 mt-2 nowrap">NAJPOVOLJNIJI OGLASI <i class="fas fa-fire" style="color: rgb(228, 91, 12);"></i></p>
                 </div>
                 <hr>
                 <div class="row" id="newest-ads-row">
-                    <div class="col-md-3 text-center">
 
-                    <!-- KARTICA-->
-                        <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
- <!-- TODO: POPRAVI MEDIA QUERY --><p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a  id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
+                @foreach ($lowestPrice as $ad)
                     <div class="col-md-3 text-center">
-                        <!-- KARTICA-->
-                        <div class="ad p-3">
+                    <div class="ad p-3">
                             <!-- pocetak kartice -->
                                     <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
+                                  
+                                    <img class="card-img-top img" src="{{URL::to('/')}}/images/{{$ad->id}}_0.jpg" alt="Card image cap">
+                                 
                                     <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
+                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
                                     <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a id="ad-link" href="">Pogledaj oglas</a>
+                                    <p class="card-text">{{$ad->description}}</p>
+                                    <a  id="ad-link" href="/oglas/{{$ad->id}}">Pogledaj oglas</a>
                                     </div>
                                      </div>
-                             <!-- kraj kartice -->
                         </div>
+                            <!-- kraj kartice -->
+                            </div>
+                        
+                    @endforeach
 
-                    </div>
-                    <div class="col-md-3 text-center">
-                         <!-- KARTICA-->
-                        <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                         <!-- KARTICA-->
-                         <div class="ad p-3">
-                            <!-- pocetak kartice -->
-                                    <div class="card p-2">
-                                    <img class="card-img-top" src="https://t.nekretnine.rs/inzercie/nk_orig_6780548_phpDPdNAD.jpg?t=L2ZpdC1pbi83NzB4NTc3L2NlbnRlci9taWRkbGUvZmlsdGVyczpxdWFsaXR5KDgwKQ&h=UM3jCNIstfO_EvPo6oSkOw&e=2145916800" alt="Card image cap">
-                                    <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Somborska 83A/78 STAN</h4>
-                                    <hr>
-                                    <p class="card-text">Za prodaju - izuzetan stan 146m2 uz ogradu Belog dvora, uknjižen na 100m2, sa pogledom na zelenilo poseda Belog dvora. Trostrano orijentisan, na 2. sp...</p>
-                                    <a id="ad-link" href="">Pogledaj oglas</a>
-                                    </div>
-                                     </div>
-                             <!-- kraj kartice -->
-                        </div>
-                    </div>
+                
                 </div>
-
-
-            </div>
+            
 
 
         </section>

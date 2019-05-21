@@ -16,11 +16,12 @@ class CreateAdsTable extends Migration
         Schema::create('Ads', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->string('headline');
-          $table->timestamp('dateCreated');
-          $table->string('dateExpired');
-          $table->string('categoryID');
+          $table->date('dateCreated');
+          $table->date('dateExpired');
+          $table->integer('categoryID');
           $table->string('description');
           $table->foreign('categoryID')->references('id')->on('category');
+          $table->timestamps();
         });
     }
 

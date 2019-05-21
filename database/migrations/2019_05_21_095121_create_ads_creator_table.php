@@ -13,13 +13,13 @@ class CreateAdsCreatorTable extends Migration
      */
     public function up()
     {
-        Schema::create('ads_creator', function (Blueprint $table) {
+        Schema::create('ads_creators', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('userId')->default(0);
             $table->integer('adId')->default(0);
             $table->foreign('userId')->references('id')->on('users');
             $table->foreign('adId')->references('id')->on('ads');
-          
+            $table->timestamps();
         });
     }
 
