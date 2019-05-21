@@ -6,7 +6,7 @@
 
 
 <div class="home-container">
-    
+
         <section id="search-section">
 
             <div class="dark-overlay row justify-content-center align-items-center">
@@ -36,7 +36,7 @@
                                  </select>
                             </div>
                         </div>
-        
+
 
                         <div class="col-sm-3">
                             <div class="form-group">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        </div> 
+                        </div>
 
 
                         <div class="row">
@@ -61,21 +61,21 @@
                         </div>
                     </div>
 
-                    
-                   
+
+
             </div>
     </section>
-    
 
-        <section id="ad-section" class="text-dark">
+
+        <section id="ad-section" class="text-dark ">
             <div class="newest-ads">
                 <div class="row">
                     <p class="h1 ml-5 mt-2 nowrap">NAJNOVIJI OGLASI  <i class="fas fa-ad" style="color: rgb(228, 91, 12);"></i></p>
                 </div>
                 <hr>
-                <div class="row" id="newest-ads-row"> 
+                <div class="row" id="newest-ads-row">
                     <div class="col-md-3 text-center">
-                        
+
                     <!-- KARTICA-->
                         <div class="ad p-3">
                             <!-- pocetak kartice -->
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                    
+
 
             </div>
     <!-- koristi isti css newewst-ads -->
@@ -150,9 +150,9 @@
                     <p class="h1 ml-5 mt-2 nowrap">POPULARNI OGLASI <i class="fas fa-fire" style="color: rgb(228, 91, 12);"></i></p>
                 </div>
                 <hr>
-                <div class="row" id="newest-ads-row"> 
+                <div class="row" id="newest-ads-row">
                     <div class="col-md-3 text-center">
-                        
+
                     <!-- KARTICA-->
                         <div class="ad p-3">
                             <!-- pocetak kartice -->
@@ -218,14 +218,14 @@
                         </div>
                     </div>
                 </div>
-                    
+
 
             </div>
 
 
         </section>
-    
-   
+
+
 </div>
 
 <script src="{{asset('assets/js/login.js')}}"></script>

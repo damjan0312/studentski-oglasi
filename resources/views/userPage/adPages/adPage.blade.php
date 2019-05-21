@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/ad.css')}}">
 
-    
+
 
 <section id="ad-section" class="text-dark">
 
@@ -11,14 +11,14 @@
         <div class="home-inner container">
         <div class="row justify-content-center">
                     <div class="col-lg-12">
-                    
+
                         <div id="cont" class="card text-center card-form">
                             <div class="card-body">
                                     <h3 class="display-5 pb-4 text-center">DODAJ OGLAS </h3>
                                 </div>
-                           
-                                
-                                
+
+
+
                                 <div class="row justify-content-center pb-3">
                                     <button class="btn  btn-lg ml-4 active" id="step1">1. Osnovni podaci</button>
                                     <button class="btn  btn-lg ml-4" id="step2">2. Fotografije</button>
@@ -51,7 +51,7 @@
                                         </div>
 
                                         <hr />
-                                        
+
 
 
                                         <div class="d-flex input-group ml-4 pr-4">
@@ -229,8 +229,8 @@
                                     <!-- kraj dela za kraj -->
 
                                     <!-- BTN KRAJ-->
-                                    <input type="submit" id="submit" class="btn  float-right"
-                                    value="Kraj" style="display: none;">
+                                    <button type="submit" id="submit" class="btn  float-right"
+                                    value="Kraj" style="display: none;">Kraj</button>
                                     <!-- prikazati submit dugme tek na 3. tablici-->
 
                                 </form>
