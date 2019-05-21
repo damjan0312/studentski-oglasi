@@ -21,6 +21,7 @@ class CreateStudentsTable extends Migration
           $table->integer('yearOfStudy')->default(1);
           $table->foreign('id')->references('id')->on('users');
           $table->primary('id');
+          
         });
     }
 

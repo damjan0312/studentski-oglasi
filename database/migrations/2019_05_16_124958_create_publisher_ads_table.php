@@ -13,7 +13,7 @@ class CreatePublisheradsTable extends Migration
      */
     public function up()
     {
-        Schema::create('publisherads', function (Blueprint $table) {
+        Schema::create('publisher_ads', function (Blueprint $table) {
           $table->integer('id');
           $table->double('price');
           $table->string('category');

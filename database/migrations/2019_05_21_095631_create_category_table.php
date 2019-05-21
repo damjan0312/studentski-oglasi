@@ -17,6 +17,7 @@ class CreateCategoryTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->default('');
             $table->boolean('type');
+            $table->timestamps();
         });
     }
 
