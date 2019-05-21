@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 
 
-class ImageUploadController extends Controller
+class adUploadController extends Controller
 
 {
 
@@ -49,7 +49,13 @@ class ImageUploadController extends Controller
     {
 
        request()->validate([
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'headline' =>'required|string|min:5',
+            'street' =>'required|string|min:5',
+            'number' => 'required|string|min:5',
+            'squareFeet' => 'required|integer',
+            'description' =>'required|string|min:5',
+            'price' =>'required|double',
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
 
@@ -74,5 +80,4 @@ class ImageUploadController extends Controller
             //->with('image',$imageName);
 
     }
-
 }

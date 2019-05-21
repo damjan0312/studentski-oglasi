@@ -75,7 +75,7 @@
                                             <div class="form-group" style="width: 100%;">
                                                 <div class="form-group " style="width: 100%">
                                                 <b class="float-left h3"> KATEGORIJA </b>
-                                                    <select class="custom-select my-select">
+                                                    <select class="custom-select my-select" name="category">
                                                     <option value="stan">Stan</option>
                                                     <option value="kuca">Kuca</option>
                                                     <option value="soba">Soba</option>
@@ -92,14 +92,26 @@
                                         <div class="d-flex input-group ml-4 pr-4">
                                          <b class="float-left h3"> LOKACIJA </b>
                                             <div class="form-group" style="width: 100%;">
-                                                <input type="text" class="form-control" placeholder="Ulica"
-                                                    name="street">
+                                                <input type="text" class="form-control form-control{{ $errors->has('street') ? ' is-invalid' : '' }}"
+                                                 placeholder="Ulica"  id="street" name="street">
+
+                                                    @if ($errors->has('street'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('street') }}</strong>
+                                                        </span>
+                                                    @endif
                                             </div>
                                         </div>
                                         <div class="d-flex input-group ml-4 pr-4">
                                             <div class="form-group" style="width: 100%;">
-                                                <input type="datetime" class="form-control"
-                                                    placeholder="Broj" name="number">
+                                                <input type="datetime" class="form-control form-control{{ $errors->has('number') ? ' is-invalid' : '' }}"
+                                                    placeholder="Broj" name="number" >
+
+                                                    @if ($errors->has('number'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('number') }}</strong>
+                                                        </span>
+                                                    @endif
                                             </div>
                                         </div>
                                         <hr/>
@@ -107,8 +119,14 @@
                                         <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ KVADRATA </b>
-                                        <input type="text" class="form-control"
-                                                    placeholder="Broj kvadrata" name="number">
+                                        <input type="text" class="form-control form-control{{ $errors->has('squareFeet') ? ' is-invalid' : '' }}"
+                                                    placeholder="Broj kvadrata" name="squareFeet">
+
+                                                    @if ($errors->has('squareFeet'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('squareFeet') }}</strong>
+                                                        </span>
+                                                    @endif
 
                                             </div>
                                         </div>
@@ -120,7 +138,7 @@
                                         <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ SOBA </b>
-                                                <select class="custom-select my-select">
+                                                <select name="numOfRooms" class="custom-select my-select">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -134,7 +152,7 @@
                                         <div class="d-flex ml-4 pr-4">
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ KUPATILA </b>
-                                                <select class="custom-select my-select">
+                                                <select name="numOfBathrooms" class="custom-select my-select">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
@@ -148,7 +166,7 @@
                                         <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                             <b class="float-left h4"> GREJANJE </b>
-                                                    <select class="custom-select my-select">
+                                                    <select name="typeOfHeating" class="custom-select my-select">
                                                     <option value="centralno">Centralno grejanje</option>
                                                     <option value="samostalno">Samostalno (TA pec, klima)</option>
                                                     <option value="drva">Grejanje na drva</option>
@@ -162,19 +180,42 @@
                                         <div class="d-flex ml-4 pr-4">
                                             <div class="form-group ">
                                             <b class="float-left"> TV </b>
-                                            <input id="cb-tv" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
+                                            <input id="cb-tv" name="tv" type="checkbox" class="ml-2 form-control{{ $errors->has('tv') ? ' is-invalid' : '' }}" style="float: left; margin-top: 5px;>">
+                                                    @if ($errors->has('tv'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('tv') }}</strong>
+                                                        </span>
+                                                    @endif
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> INTERNET </b>
-                                              <input id="cb-internet" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
+                                              <input id="cb-internet" name="internet" type="checkbox" class="ml-2 form-control{{ $errors->has('internet') ? ' is-invalid' : '' }}"
+                                                style="float: left; margin-top: 5px;>">
+                                              @if ($errors->has('internet'))
+                                                 <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('internet') }}</strong>
+                                                </span>
+                                              @endif
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> KLIMA UREDJAJ </b>
-                                              <input id="cb-klima" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
+                                              <input id="cb-klima"  name="airCondition" type="checkbox" class="ml-2 form-control{{ $errors->has('airCondition') ? ' is-invalid' : '' }}"
+                                              style="float: left; margin-top: 5px;>">
+                                              @if ($errors->has('airCondition'))
+                                                 <span class="invalid-feedback" role="alert">
+                                                     <strong>{{ $errors->first('airCondition') }}</strong>
+                                                 </span>
+                                              @endif
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> PARKING </b>
-                                              <input id="cb-parking" type="checkbox" class="ml-2" style="float: left; margin-top: 5px;>">
+                                              <input id="cb-parking" name="parking" type="checkbox" class="ml-2 form-control{{ $errors->has('parking') ? ' is-invalid' : '' }}"
+                                               style="float: left; margin-top: 5px;>">
+                                              @if ($errors->has('parking'))
+                                                  <span class="invalid-feedback" role="alert">
+                                                       <strong>{{ $errors->first('parking') }}</strong>
+                                                    </span>
+                                              @endif
                                             </div>
                                         </div>
 
@@ -190,16 +231,27 @@
                                             <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> NASLOV OGLASA </b>
-                                                    <input type="text" class="form-control"
-                                                                placeholder="" name="number">
+                                                    <input type="text" class="form-control form-control{{ $errors->has('headline') ? ' is-invalid' : '' }}"
+                                                                placeholder="" name="headline">
+
+                                                    @if ($errors->has('headline'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('headline') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
                                             <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> OPIS </b>
-                                                    <textarea type="text" class="form-control"
-                                                                placeholder="" id="description"> </textarea>
+                                                    <textarea type="text" class="form-control form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                                                                placeholder="" id="description" name="description"> </textarea>
+                                                    @if ($errors->has('description'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('description') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -213,15 +265,15 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" name="price">
+                                                            <input type="text" class="form-control form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price">
+                                                            @if ($errors->has('price'))
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $errors->first('price') }}</strong>
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                         <div class="col-sm-3">
-                                                            <select class="custom-select my-select">
-                                                                <option value="-1">VALUTA</option>
-                                                                <option value="euro">EUR</option>
-                                                                <option value="dollar">DOL</option>
-                                                                <option value="dinar">RSD</option>
-                                                            </select>
+                                                            <b class=" h4 ml-3"> EUR </b>
                                                         </div>
                                                     </div>
                                                 </div>

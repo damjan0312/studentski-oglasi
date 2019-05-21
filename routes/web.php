@@ -34,6 +34,6 @@ Route::get('/oglas', 'PublicController@seeAdPage')->name('seeAdPage');
 
 Route::get('/studentskiOglas', 'PublicController@studentAd')->name('studentAd');
 
-Route::get('image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
+Route::get('image-upload', 'adUploadController@imageUpload')->name('image.upload');
 
-Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
+Route::post('image-upload', 'adUploadController@imageUploadPost')->name('image.upload.post');

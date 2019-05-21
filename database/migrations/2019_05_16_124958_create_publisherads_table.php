@@ -15,15 +15,13 @@ class CreatePublisheradsTable extends Migration
     {
         Schema::create('publisherads', function (Blueprint $table) {
           $table->integer('id');
-          $table->string('title');
-          $table->string('description');
-          $table->integer('price');
+          $table->double('price');
           $table->string('category');
           $table->string('street');
           $table->string('number');
-          $table->string('squareFeet');
-          $table->string('numOfRooms');
-          $table->string('numOfBathrooms');
+          $table->integer('squareFeet');
+          $table->integer('numOfRooms');
+          $table->integer('numOfBathrooms');
           $table->string('typeOfHeating');
           $table->boolean('tv')->default(false);
           $table->boolean('internet')->default(false);
