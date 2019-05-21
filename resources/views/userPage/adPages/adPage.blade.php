@@ -28,8 +28,6 @@
 
                                   </div>
 
-                                  <img src="images/{{ Session::get('image') }}">
-
                                   @endif
 
 
@@ -342,7 +340,6 @@
     </div>
 
 </section>
-<script src="{{asset('assets/js/uploadAd.js')}}"></script>
 <script src="{{asset('assets/js/ad.js')}}"></script>
 <!-- <script src="{{asset('assets/js/uploadNewAd.js')}}"></script> --> <!-- SKRIPTA ZA UPLOAD PODATAKA NA SERVER -->
 

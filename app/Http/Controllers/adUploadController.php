@@ -59,7 +59,7 @@ class adUploadController extends Controller
             'street' =>'required|string|min:5',
             'number' => 'required|string',
             'squareFeet' => 'required|integer',
-            'description' =>'required|string|min:5',
+            'description' =>'required|string|min:5|max:4000',
             'price' =>'required|integer',
             'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
@@ -119,7 +119,7 @@ class adUploadController extends Controller
 
         return back()
 
-            ->with('success','You have successfully upload image.');
+            ->with('success','Uspesno ste postavili oglas!');
 
             //->with('image',$imageName);
 
