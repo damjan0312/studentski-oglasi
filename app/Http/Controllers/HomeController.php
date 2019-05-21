@@ -94,7 +94,11 @@ class HomeController extends Controller
       return view('userPage.adPages.seeAdPage', compact('login'));
     }
 
-    
+    public function uploadImage()
+    {
+      return view('userPage.adPages.imageUpload');
+    }
+
 
 
 

@@ -18,7 +18,41 @@
                                 </div>
 
 
+                                @if ($message = Session::get('success'))
 
+                                  <div class="alert alert-success alert-block">
+
+                                      <button type="button" class="close" data-dismiss="alert">×</button>
+
+                                          <strong>{{ $message }}</strong>
+
+                                  </div>
+
+                                  <img src="images/{{ Session::get('image') }}">
+
+                                  @endif
+
+
+
+                                  @if (count($errors) > 0)
+
+                                      <div class="alert alert-danger">
+
+                                          <strong>Whoops!</strong> There were some problems with your input.
+
+                                          <ul>
+
+                                              @foreach ($errors->all() as $error)
+
+                                                  <li>{{ $error }}</li>
+
+                                              @endforeach
+
+                                          </ul>
+
+                                      </div>
+
+                                @endif
                                 <div class="row justify-content-center pb-3">
                                     <button class="btn  btn-lg ml-4 active" id="step1">1. Osnovni podaci</button>
                                     <button class="btn  btn-lg ml-4" id="step2">2. Fotografije</button>
@@ -32,7 +66,8 @@
                                 </div>
 
 
-                                <form action="" class="pt-5 ">
+                              <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data" class="pt-5">
+                              @csrf
                                 <hr>
                                     <div id="basic-info" class="row">
                                     <div class="col-md-6">
@@ -210,7 +245,8 @@
                                     <!-- pocetak dela za fotografije -->
                                     <div id="photo-part" class="mt-4" style="display:none;">
 
-                                        <input type="file" name="files[]" multiple >
+                                        <input type="file" name="image[]" class="form-control" multiple>
+
 
                                     </div>
 
@@ -254,7 +290,7 @@
     </div>
 
 </section>
-
+<script src="{{asset('assets/js/uploadAd.js')}}"></script>
 <script src="{{asset('assets/js/ad.js')}}"></script>
 <!-- <script src="{{asset('assets/js/uploadNewAd.js')}}"></script> --> <!-- SKRIPTA ZA UPLOAD PODATAKA NA SERVER -->
 

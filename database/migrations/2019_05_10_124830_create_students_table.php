@@ -15,6 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
           $table->integer('id');
+          $table->rememberToken();
           $table->timestamps();
           $table->string('faculty')->default('');
           $table->integer('yearOfStudy')->default(1);

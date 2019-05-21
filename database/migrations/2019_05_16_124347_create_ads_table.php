@@ -15,18 +15,12 @@ class CreateAdsTable extends Migration
     {
         Schema::create('Ads', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->string('category');
-          $table->string('street');
-          $table->string('number');
+          $table->string('headline');
+          $table->timestamp('dateCreated');
+          $table->string('dateExpired');
           $table->string('categoryID');
-          $table->timestamp('email_verified_at')->nullable();
-          $table->string('password');
-          $table->boolean('admin')->default(false);
-          $table->boolean('student');
-          $table->string('phoneNumber')->default('');
-          $table->integer('numberOfAds')->default(0);
-          $table->rememberToken();
-          $table->timestamps();
+          $table->string('description');
+          $table->foreign('categoryID')->references('id')->on('category');
         });
     }
 

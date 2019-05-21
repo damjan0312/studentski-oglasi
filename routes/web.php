@@ -33,3 +33,7 @@ Route::resource('updateProfil','HomeController');
 Route::get('/oglas', 'PublicController@seeAdPage')->name('seeAdPage');
 
 Route::get('/studentskiOglas', 'PublicController@studentAd')->name('studentAd');
+
+Route::get('image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
+
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');

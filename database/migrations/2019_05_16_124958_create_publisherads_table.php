@@ -14,7 +14,7 @@ class CreatePublisheradsTable extends Migration
     public function up()
     {
         Schema::create('publisherads', function (Blueprint $table) {
-          $table->bigIncrements('id');
+          $table->integer('id');
           $table->string('title');
           $table->string('description');
           $table->integer('price');
@@ -29,9 +29,9 @@ class CreatePublisheradsTable extends Migration
           $table->boolean('internet')->default(false);
           $table->boolean('airCondition')->default(false);
           $table->boolean('parking')->default(false);
+          $table->string('images')->default('');
 
-
-          $table->rememberToken();
+          $table->foreign('id')->references('id')->on('ads');
           $table->timestamps();
         });
     }
