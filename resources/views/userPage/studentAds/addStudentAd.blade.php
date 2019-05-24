@@ -8,7 +8,7 @@
 
     <section id="add-section" class="text-white">
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('StudentAd') }}"  method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="row text-dark" id="row-div">
@@ -20,12 +20,12 @@
                     <div class="d-flex">
                         <div class="form-group " style="width: 100%">
                             <b class="float-left h4"> Tip Oglasa </b>
-                            <select name="typeOfHeating" class="custom-select my-select">
-                                <option value="0">Izaberite tip oglasa</option>
+                            <select name="typeOfHeating" class="custom-select my-select" name="category">
+                                <option value="">Izaberite tip oglasa</option>
                                 <option value="Prodaja Knjiga">Prodaja Knjiga</option>
                                 <option value="Trazim Cimera">Trazim Cimera</option>
                                 <option value="Privatni Casovi">Privatni Casovi</option>
-                                <option value="Cvrsto gorivo">Ostalo...</option>
+                                <option value="Ostalo">Ostalo</option>
                             </select>
 
                         </div>
@@ -51,7 +51,7 @@
                             <b class="float-left h4"> Opis Oglasa </b>
                             <textarea id="description-textarea" type="text"
                                 class="form-control form-control{{ $errors->has('description-textarea') ? ' is-invalid' : '' }}"
-                                placeholder="Opisite Svoj Oglas Ovde..." name="description-textarea"></textarea>
+                                placeholder="Opisite Svoj Oglas Ovde..." name="description"></textarea>
 
                             @if ($errors->has('headline'))
                             <span class="invalid-feedback" role="alert">
