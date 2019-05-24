@@ -86,7 +86,15 @@ class HomeController extends Controller
 
     public function ad()
     {
-      return view('userPage.adPages.adPage');
+      if(Auth::user()->student==true)
+      {
+        $login = 'layouts.masterProfile';
+        return view('userPage.adPages.adPage',compact('login'));
+      }
+      else {
+        $login = 'layouts.masterProfile';
+        return view('userPage.studentAds.addStudentAd',compact('login'));
+      }
     }
 
     public function seeAdPage()
@@ -100,7 +108,7 @@ class HomeController extends Controller
       return view('userPage.adPages.imageUpload');
     }
 
-    
+
 
 
 
