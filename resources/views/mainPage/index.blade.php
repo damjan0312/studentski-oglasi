@@ -10,56 +10,67 @@
         <section id="search-section">
 
             <div class="dark-overlay row justify-content-center align-items-center">
+              <form class=""  method="POST" action="search">
+                @csrf
                     <div class="search-container container text-dark p-3 row justify-content-center align-items-center">
+
+
                         <div class="row flex-nowrap">
 
 
-                    <div class="col-sm-3 ">
-                            <div class="form-group">
-                                <b>KATEGORIJA</b>
-                                <select class="custom-select my-select">
-                                    <option value="stan">Stan</option>
-                                    <option value="kuca">Kuca</option>
-                                    <option value="soba">Soba</option>
-                                 </select>
-                            </div>
-                        </div>
+                            <div class="col-sm-3 ">
+                                    <div class="form-group">
+                                        <b>KATEGORIJA</b>
+                                        <select class="custom-select my-select" name="category">
+                                            <option value=""></option>
+                                            <option value="stan">Stan</option>
+                                            <option value="kuca">Kuca</option>
+                                            <option value="soba">Soba</option>
+                                         </select>
+                                    </div>
+                                </div>
 
 
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                               <b>OPSTINA</b>
-                                <select class="custom-select my-select">
-                                    <option value="stan">Medijana</option>
-                                    <option value="kuca">Pantelej</option>
-                                    <option value="soba">Crveni Krst</option>
-                                 </select>
-                            </div>
-                        </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                       <b>OPSTINA</b>
+                                        <select class="custom-select my-select" name="community">
+                                          <option value=""></option>
+                                          <option value="Medijana">Medijana</option>
+                                          <option value="Pantelej">Pantelej</option>
+                                          <option value="Crveni Krst">Crveni Krst</option>
+                                          <option value="Palilula">Palilula</option>
+                                          <option value="Niska Banja">Niska banja</option>
+
+                                         </select>
+                                    </div>
+                                </div>
 
 
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                            <b>CENA OD:</b>
-                                <input class="form-control" type="text" placeholder="EUR">
-                            </div>
-                        </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                    <b>CENA OD:</b>
+                                        <input class="form-control" type="text" placeholder="EUR" name="priceFrom">
+                                    </div>
+                                </div>
 
 
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                            <b>CENA DO:</b>
-                                <input class="form-control" type="text" placeholder="EUR">
-                            </div>
-                        </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                    <b>CENA DO:</b>
+                                        <input class="form-control" type="text" placeholder="EUR" name="priceTo">
+                                    </div>
+                                </div>
 
-                        </div>
+                                </div>
 
 
-                        <div class="row">
-                            <button class="btn btn-lg btn-search"><b>PRETRAZI</b></button>
-                        </div>
+                                <div class="row">
+                                  <button class="btn btn-lg btn-search"><b>PRETRAZI</b></button>
+                                </div>
+
                     </div>
+                    </form >
 
 
 
@@ -74,16 +85,16 @@
                 </div>
                 <hr>
                 <div class="row" id="newest-ads-row">
-                    
+
 
                     @foreach ($ads as $ad)
                     <div class="col-md-3 text-center">
                     <div class="ad p-3">
                             <!-- pocetak kartice -->
                                     <div class="card p-2">
-                                  
+
                                     <img class="card-img-top img" src="{{URL::to('/')}}/images/{{$ad->id}}_0.jpg" alt="Card image cap">
-                                 
+
                                     <div class="card-block">
                                     <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
                                     <hr>
@@ -96,8 +107,8 @@
                             </div>
                     @endforeach
 
-                       
-                    
+
+
                 </div>
 
 
@@ -115,9 +126,9 @@
                     <div class="ad p-3">
                             <!-- pocetak kartice -->
                                     <div class="card p-2">
-                                  
+
                                     <img class="card-img-top img" src="{{URL::to('/')}}/images/{{$ad->id}}_0.jpg" alt="Card image cap">
-                                 
+
                                     <div class="card-block">
                                     <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
                                     <hr>
@@ -128,12 +139,12 @@
                         </div>
                             <!-- kraj kartice -->
                             </div>
-                        
+
                     @endforeach
 
-                
+
                 </div>
-            
+
 
 
         </section>

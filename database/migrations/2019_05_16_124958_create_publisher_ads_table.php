@@ -17,6 +17,7 @@ class CreatePublisheradsTable extends Migration
           $table->integer('id');
           $table->double('price');
           $table->string('category');
+          $table->string('community');
           $table->string('street');
           $table->string('number');
           $table->integer('squareFeet');

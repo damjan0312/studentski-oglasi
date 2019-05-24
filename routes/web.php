@@ -41,3 +41,5 @@ Route::post('image-upload', 'adUploadController@imageUploadPost')->name('image.u
 Route::get('oglas/{id}', 'PublicController@adLink');
 
 Route::get('/studentskiOglas/dodajOglas', 'PublicController@addStudentAd');
+
+Route::post('search', 'PublicController@search')->name('search');
