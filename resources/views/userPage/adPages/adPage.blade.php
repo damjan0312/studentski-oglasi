@@ -89,6 +89,17 @@
 
                                         <div class="d-flex input-group ml-4 pr-4">
                                          <b class="float-left h3"> LOKACIJA </b>
+                                         <div class="form-group " style="width: 100%">
+                                           <b class="float-left h3"> Opstina </b>
+                                             <select class="custom-select my-select" name="community">
+                                             <option value="Medijana">Medijana</option>
+                                             <option value="Pantelej">Pantelej</option>
+                                             <option value="Crveni Krst">Crveni Krst</option>
+                                             <option value="Palilula">Palilula</option>
+                                             <option value="Niska Banja">Niska banja</option>
+                                            </select>
+
+                                         </div>
                                             <div class="form-group" style="width: 100%;">
                                                 <input type="text" class="form-control form-control{{ $errors->has('street') ? ' is-invalid' : '' }}"
                                                  placeholder="Ulica"  id="street" name="street">

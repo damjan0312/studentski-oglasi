@@ -26,7 +26,7 @@ class PublicController extends Controller
           ->limit(4)
           ->orderBy('publisher_ads.price', 'ASC')
           ->get();
-          
+
         return view('mainPage.index', compact('login', 'ads', 'lowestPrice'));
       }
       else{
@@ -35,6 +35,61 @@ class PublicController extends Controller
         $lowestPrice = PublisherAds::orderBy('price', 'ASC')->limit(4)->get();
         return view('mainPage.index', compact('login', 'ads', 'lowestPrice'));
       }
+
+    }
+
+    public function search()
+    {
+      if($user = Auth::user())
+      {
+        $login = 'layouts.masterProfile';
+      }
+      else {
+        $login = 'layouts.master';
+      }
+      $ads=[];
+      $lowestPrice=[];
+      $ads1=[];
+      $ads2=[];
+
+      $input=Input::only('category','community','priceFrom','priceTo');
+      $category=$input['category'];
+      $community=$input['community'];
+      $priceFrom=$input['priceFrom'];
+      $priceTo=$input['priceTo'];
+
+      $priceFrom = ctype_digit($input['priceFrom']) ? intval($input['priceFrom']) : null;
+      $priceTo = ctype_digit($input['priceTo']) ? intval($input['priceTo']) : null;
+
+      $q= PublisherAds::query();
+
+
+
+      if(!empty(trim($category)))
+      {
+        $q->where('category',$category);
+        $category="a";
+      }
+      if(!empty(trim($community)))
+      {
+        $q->Where('community',$community);
+        $category=$category."b";
+      }
+      if($priceTo !== null && $priceFrom !== null)
+      {
+        $q->whereBetween('price',[$priceFrom,$priceTo]);
+      }
+      else if($priceTo !== null)
+      {
+        $q->where('price','<',$priceTo);
+      }
+      else if($priceFrom !== null)
+      {
+        $q->where('price','>',$priceFrom);
+      }
+
+      $ads=$q->get();
+      return view('mainPage.index',compact('login','ads','lowestPrice','category','community'));
 
     }
 
@@ -68,11 +123,11 @@ class PublicController extends Controller
     }
 
     public function adLink($id){
-       
+
       if($user = Auth::user())
       {
         $login = 'layouts.masterProfile';
-        
+
       }
       else{
         $login = 'layouts.master';
@@ -110,6 +165,6 @@ class PublicController extends Controller
       return view('userPage.studentAds.addStudentAd', compact('login'));
     }
 
-    
+
 
 }

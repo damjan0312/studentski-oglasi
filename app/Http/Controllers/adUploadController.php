@@ -73,7 +73,7 @@ class adUploadController extends Controller
           /*'id','headline','categoryID','description'*/
           //Auth::user()->student
 
-          $input=Input::only('category','street','number','squareFeet','numOfRooms','numOfBathrooms','typeOfHeating','tv','internet','parking','headline','description','price');
+          $input=Input::only('category','community','street','number','squareFeet','numOfRooms','numOfBathrooms','typeOfHeating','tv','internet','parking','headline','description','price');
           $ad=new Ads;
           $ad->headline=$input['headline'];
           $ad->dateCreated=Carbon::now();
@@ -90,6 +90,7 @@ class adUploadController extends Controller
 
           $publisherAds=new PublisherAds;
           $publisherAds->id=$adsId;
+          $publisherAds->community=$input['community'];
           $publisherAds->price=$input['price'];
           $publisherAds->category=$input['category'];
           $publisherAds->street=$input['street'];
