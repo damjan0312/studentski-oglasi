@@ -91,11 +91,7 @@ class PublicController extends Controller
       $ads=$q->join('ads', 'ads.id', '=', 'publisher_ads.id')
         ->get();
 
-
-
       return view('mainPage.index',compact('login','ads','lowestPrice'));
-
-
     }
 
     public function login()
