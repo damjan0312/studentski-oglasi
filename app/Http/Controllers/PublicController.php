@@ -91,63 +91,7 @@ class PublicController extends Controller
       $ads=$q->get();
       return view('mainPage.index',compact('login','ads','lowestPrice','category','community'));
 
-      /*if($category !== '' && $community === '')
-      {
-        $ads1=PublisherAds::query()
-         ->where('category',$category)
-         ->get();
-      }
-      else if($category === '' && $community !== '')
-      {
-        $ads1=PublisherAds::query()
-         ->where('community',$community)
-         ->get();
-      }
-      else if($category !== '' && $community !== ''){
-        $ads1=PublisherAds::query()
-         ->where('category',$category)
-         ->where('community',$community)
-         ->get();
-      }
-
-      if ($priceFrom !== null && $priceTo===null)
-      {
-        $ads2=PublisherAds::query()
-         ->where('price','>',$priceFrom)
-         ->get();
-      }
-      else if($priceFrom !== null && $priceTo!==null)
-      {
-        $ads2=PublisherAds::query()
-         ->whereBetween('price', [$priceFrom, $priceTo])
-         ->get();
-      }
-      else if($priceFrom === null && $priceTo!==null)
-      {
-        $ads2=PublisherAds::query()
-         ->where('price','<', $priceTo)
-         ->get();
-      }
-
-      if(count($ads1)>0 && count($ads2)>0){
-        for($i=0;$i<count($ads1);$i++)
-        {
-          for($j=0;$j<count($ads2);$j++)
-          {
-            if($ads1[$i]->id===$ads2[$j]->id)
-              array_push($ads,$ads1[$i]);
-          }
-        }
-      }
-      else if(count($ads1)>0)
-      {
-        $ads=$ads1;
-      }
-      else if(count($ads2)>0)
-      {
-        $ads=$ads2;
-      }
-      return view('mainPage.index',compact('login','ads','lowestPrice'));*/
+    
     }
 
     public function login()
