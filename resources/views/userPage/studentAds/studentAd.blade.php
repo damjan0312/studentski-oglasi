@@ -19,7 +19,7 @@
 
             <div id="add-studentAd" class="text-center">
                 <div class="d-flex justify-content-end">
-                    <a href="{{route('addStudentAd')}}" id="add-studentAdLink"
+                    <a href="{{route('ad')}}" id="add-studentAdLink"
                         class="btn btn-success btn-lg hover-class">POSTAVI SVOJ OGLAS</a>
                 </div>
                 <div class="d-flex justify-content-end">
@@ -51,9 +51,9 @@
 <div class="row">
                 <div class="col-md-3 text-center">
                     <div class="ad p-3">   <!-- pocetak kartice -->
-                          
+
                                     <div class="card p-2">
-                                 
+
                                     <div class="card-block">
                                     <h4 class="card-title font-weight-bold">Prodaja knjiga</h4>
                                     <hr>
@@ -62,14 +62,14 @@
                                     </div>
                                      </div>
                         </div>
-                            
+
                     </div><!-- kraj kartice -->
 
                     <div class="col-md-3 text-center">
                     <div class="ad p-3">   <!-- pocetak kartice -->
-                          
+
                                     <div class="card p-2">
-                                 
+
                                     <div class="card-block">
                                     <h4 class="card-title font-weight-bold">Trazim cimera</h4>
                                     <hr>
@@ -78,7 +78,7 @@
                                     </div>
                                      </div>
                         </div>
-                            
+
                     </div><!-- kraj kartice -->
 </div>
 
