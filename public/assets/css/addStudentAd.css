@@ -34,12 +34,17 @@ body{
     -webkit-box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
     box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
+
+    border-radius: 17px;
+
+    padding: 10px 20px 10px 20px;
 }
 
 #add-studentAd{
     transition: width 1s, opacity 1s;
     width: 260px;
     opacity: 0.9;
+
 
     -webkit-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
