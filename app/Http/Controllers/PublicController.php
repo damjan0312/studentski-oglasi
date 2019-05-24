@@ -99,6 +99,17 @@ class PublicController extends Controller
       return view('userPage.adPages.seeAdPage', compact('login', 'ad', 'pictures', 'user'));
     }
 
+    public function addStudentAd(){
+      if($user = Auth::user())
+      {
+        $login = 'layouts.masterProfile';
+      }
+      else{
+        $login = 'layouts.master';
+      }
+      return view('userPage.studentAds.addStudentAd', compact('login'));
+    }
+
     
 
 }
