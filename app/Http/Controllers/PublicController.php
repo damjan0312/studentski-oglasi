@@ -19,22 +19,28 @@ class PublicController extends Controller
       if($user = Auth::user())
       {
         $login = 'layouts.masterProfile';
-        $ads = Ads::orderBy('id', 'DESC')->limit(4)->get();
-     //   $lowestPrice = PublisherAds::orderBy('price', 'ASC')->limit(4)->get();
-        $lowestPrice = Ads::select()
+      }else{
+        $login = 'layouts.master';
+      }
+        
+      $ads = Ads::select('*')
+        ->join('publisher_ads', 'ads.id', '=', 'publisher_ads.id')
+        ->limit(4)
+        ->orderBy('publisher_ads.id', 'DESC')
+        ->get();
+
+
+        $lowestPrice = Ads::select('*')
           ->join('publisher_ads', 'ads.id', '=', 'publisher_ads.id')
           ->limit(4)
           ->orderBy('publisher_ads.price', 'ASC')
           ->get();
 
-        return view('mainPage.index', compact('login', 'ads', 'lowestPrice'));
-      }
-      else{
-        $login = 'layouts.master';
-        $ads = Ads::orderBy('id', 'DESC')->limit(4)->get();
-        $lowestPrice = PublisherAds::orderBy('price', 'ASC')->limit(4)->get();
-        return view('mainPage.index', compact('login', 'ads', 'lowestPrice'));
-      }
+      
+        
+      
+      $indicator = 0;
+      return view('mainPage.index', compact('login', 'ads', 'lowestPrice', 'indicator'));
 
     }
 
@@ -61,9 +67,7 @@ class PublicController extends Controller
       $priceFrom = ctype_digit($input['priceFrom']) ? intval($input['priceFrom']) : null;
       $priceTo = ctype_digit($input['priceTo']) ? intval($input['priceTo']) : null;
 
-      $q= PublisherAds::query();
-
-
+      $q= PublisherAds::query()->select('*');
 
       if(!empty(trim($category)))
       {
@@ -91,9 +95,10 @@ class PublicController extends Controller
       $ads=$q->join('ads', 'ads.id', '=', 'publisher_ads.id')
         ->get();
 
+      $indicator = 1;
 
 
-      return view('mainPage.index',compact('login','ads','lowestPrice'));
+      return view('mainPage.index',compact('login','ads','lowestPrice', 'indicator'));
 
 
     }

@@ -84,6 +84,7 @@ body{
 #newest-ads-row .col-md-3 .ad .card:hover {
     transition: background-color  1s ease;
     background-color: rgb(252, 168, 119);
+
 }
 #ad-link{
     color:rgb(228, 91, 12);
