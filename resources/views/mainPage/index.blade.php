@@ -126,8 +126,8 @@
                                     </div>
                                      </div>
                         </div>
-                            <!-- kraj kartice -->
-                            </div>
+                            
+                    </div><!-- kraj kartice -->
                         
                     @endforeach
 
