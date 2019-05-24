@@ -1,7 +1,11 @@
 <html>
 
 <head>
+<<<<<<< HEAD
+    <title>Studentski-Oglasi</title>
+=======
     <title>Studentski oglasi</title>\
+>>>>>>> 92c99251867b2dd1daee16112fe86890a8c8fcc7
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -41,8 +45,8 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-            <a href="index" class="navbar-brand text-uppercase"> 
-                    <i id="logo-s" class="fab fa-stripe-s fa-2x"> 
+            <a href="index" class="navbar-brand text-uppercase">
+                    <i id="logo-s" class="fab fa-stripe-s fa-2x">
                     <i id="logo-o" class="fab fa-osi"></i>
 
                     </i></a>
@@ -52,7 +56,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
-                    
+
                     <li class="nav-item">
                             <a href="{{route('studentAd')}}" class="nav-link">Pogledaj studentske oglase</a>
                         </li>
