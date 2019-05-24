@@ -66,7 +66,7 @@
 
 
                                 <div class="row">
-                                  <button class="btn btn-lg btn-search"><b>PRETRAZI</b></button>
+                                  <button id="search-button" class="btn btn-lg btn-search"><b>PRETRAZI</b></button>
                                 </div>
 
                     </div>
@@ -79,6 +79,9 @@
 
 
         <section id="ad-section" class="text-dark ">
+            <div id="ordinary-list"> <!-- pocetak dela koji se sklanja klikom na search -->
+
+           
             <div class="newest-ads">
                 <div class="row">
                     <p class="h1 ml-5 mt-2 nowrap">NAJNOVIJI OGLASI  <i class="fas fa-ad" style="color: rgb(228, 91, 12);"></i></p>
@@ -145,14 +148,47 @@
 
                 </div>
 
+                </div> <!-- kraj dela koji se sklanja klikom na search -->
 
+                <div id="search-list" class="newest-ads">
+
+                <div class="row">
+                    <p class="h1 ml-5 mt-2 nowrap">REZULTATI PRETRAGE <i class="fas fa-search"></i></p>
+                </div>
+                <hr>
+
+                @foreach ($ads as $ad)
+                    <div class="col-md-3 text-center">
+                    <div class="ad p-3">
+                            <!-- pocetak kartice -->
+                                    <div class="card p-2">
+
+                                    <img class="card-img-top img" src="{{URL::to('/')}}/images/{{$ad->id}}_0.jpg" alt="Card image cap">
+
+                                    <div class="card-block">
+                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
+                                    <hr>
+                                    <p class="card-text">{{$ad->description}}</p>
+                                    <a  id="ad-link" href="/oglas/{{$ad->id}}">Pogledaj oglas</a>
+                                    </div>
+                                     </div>
+                        </div>
+                            <!-- kraj kartice -->
+                            </div>
+                    @endforeach
+
+
+                </div>
 
         </section>
+
+        
 
 
 </div>
 
 <script src="{{asset('assets/js/login.js')}}"></script>
+<script src="{{asset('assets/js/search-results.js')}}"></script>
 
 
 
