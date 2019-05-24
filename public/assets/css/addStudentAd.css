@@ -6,8 +6,69 @@ body{
     height: 100%;
 }
 
-.add-section{
+#add-section{
     height: 100%;
-    padding: 10%;
-    background-color: #fff;
+    padding: 8%;
+ /*   background-image: url('https://www.quietrev.com/wp-content/uploads/2016/02/Weve-Always-Known-That-One-on-One-Is-the-Best-Way-to-Learn-SOURCE_stocksy.jpg');*/
+    background-image: url('https://images.pexels.com/photos/864994/pexels-photo-864994.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding-left: 5%;
 }
+#row-div{
+    height: 100%;
+    /* za manje ekrane mora da bude padding-bottom: 10%; */
+
+}
+#add-div{
+    height: 120%;
+}
+#description-textarea{
+    min-height: 150px;
+    max-height: 150px;
+}
+
+#col-sm-8{
+    -webkit-box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
+    box-shadow: -9px -17px 35px -1px rgba(0,0,0,0.75);
+}
+
+#add-studentAd{
+    transition: width 1s, opacity 1s;
+    width: 260px;
+    opacity: 0.9;
+
+    -webkit-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
+    box-shadow: 14px -4px 32px 10px rgba(0,0,0,0.75);
+}
+#add-studentAd:hover{
+   transition: width 0.5s, opacity 1s;
+   width: 300px;
+   opacity: 1;
+
+}
+
+#headline-text{
+    color: rgba(63, 63, 63, 0.938);
+text-shadow: 3px 2px 3px rgba(109, 109, 109, 0.2);
+}
+
+
+@media only screen and (max-width: 900px) {
+    #home-container{
+        padding-bottom: 20%;
+        
+        padding-top: 20%;
+    }
+  }
+
+  @media only screen and (max-height: 500px) {
+    #row-div{
+        padding-bottom: 50%;
+        padding-top: 20%;
+    }
+  }
