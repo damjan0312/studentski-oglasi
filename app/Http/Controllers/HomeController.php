@@ -55,6 +55,7 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+      
         if(Auth::user()->student==true)
         {
           $input=Input::only('name','last_name','email','phoneNumber');
