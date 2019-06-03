@@ -98,6 +98,7 @@
 
                     @foreach ($ads as $ad)
                     <div class="col-md-3 text-center">
+                        <a href="/oglas/{{$ad->id}}" style="color: inherit; text-decoration:none;">
                         <div class="ad p-3">
                             <!-- pocetak kartice -->
                             <div class="card p-2">
@@ -117,6 +118,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         <!-- kraj kartice -->
                     </div>
                     @endforeach
@@ -138,6 +140,7 @@
 
                     @foreach ($lowestPrice as $ad)
                     <div class="col-md-3 text-center">
+                        <a href="/oglas/{{$ad->id}}" style="color: inherit; text-decoration:none;">
                         <div class="ad p-3">
 
                             <!-- pocetak kartice -->
@@ -160,6 +163,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         <!-- kraj kartice -->
                     </div>
 

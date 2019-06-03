@@ -18,12 +18,8 @@ body{
     padding-left: 5%;
 }
 #row-div{
-    height: 100%;
     /* za manje ekrane mora da bude padding-bottom: 10%; */
 
-}
-#add-div{
-    height: 120%;
 }
 #description-textarea{
     min-height: 150px;
@@ -63,17 +59,3 @@ text-shadow: 3px 2px 3px rgba(109, 109, 109, 0.2);
 }
 
 
-@media only screen and (max-width: 900px) {
-    #home-container{
-        padding-bottom: 20%;
-        
-        padding-top: 20%;
-    }
-  }
-
-  @media only screen and (max-height: 500px) {
-    #row-div{
-        padding-bottom: 50%;
-        padding-top: 20%;
-    }
-  }

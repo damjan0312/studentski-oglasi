@@ -56,7 +56,6 @@
               <div class="nav nav-tabs nav-fill w-100" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Uredi profil</a>
                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Postavljeni oglasi</a>
-                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Poruke</a>
             </div>
 
           </nav>
@@ -120,20 +119,9 @@
 
 
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+            <p class="display-4">Ucitati objavljenje oglase</p>
             </div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-                Name:<br>
-                <input  class="form-control" type="text" name="name"><br>
-                E-mail:<br>
-                <input  class="form-control" type="text" name="mail"><br>
-                Comment:<br>
-                <input  class="form-control" type="text" name="comment" size="50"><br><br>
-                <input type="submit" value="Send" class="btn btn-success">
-                <input type="reset" value="Reset" class="btn btn-danger">
-              </form>
-            </div>
+            
           </div>
 
         </div>

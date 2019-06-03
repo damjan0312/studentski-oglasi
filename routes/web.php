@@ -40,6 +40,7 @@ Route::post('image-upload', 'adUploadController@imageUploadPost')->name('image.u
 
 Route::get('oglas/{id}', 'PublicController@adLink');
 
-
-
 Route::post('search', 'PublicController@search')->name('search');
+
+Route::get('/publisherReview', 'PublicController@publisherReview')->name('publisherReview');
+Route::get('/studentReview', 'PublicController@studentReview')->name('studentReview');

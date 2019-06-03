@@ -127,22 +127,11 @@
             </div>
 
 
-     <!--       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <p class="display-4">Ucitati objavljenje oglase</p>
             </div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-                Name:<br>
-                <input  class="form-control" type="text" name="name"><br>
-                E-mail:<br>
-                <input  class="form-control" type="text" name="mail"><br>
-                Comment:<br>
-                <input  class="form-control" type="text" name="comment" size="50"><br><br>
-                <input type="submit" value="Send" class="btn btn-success">
-                <input type="reset" value="Reset" class="btn btn-danger">
-              </form>
-            </div>
-          </div> -->
+            
+          </div> 
 
         </div>
       </div>
