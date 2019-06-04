@@ -57,7 +57,7 @@
                                     <div class="card-block">
                                     <h4 class="card-title font-weight-bold">Prodaja knjiga</h4>
                                     <hr>
-                                    <p class="card-text">Prodajem knjige za 4.godinu Elektronskog Fakulteta</p>
+                                    <p class="card-text">{{$ads[0]->headline}}</p>
                                     <a  id="ad-linkk" href="#">Pogledaj oglas</a>
                                     </div>
                                      </div>

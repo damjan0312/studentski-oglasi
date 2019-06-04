@@ -44,6 +44,4 @@ Route::post('search', 'PublicController@search')->name('search');
 
 Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd');
 
-Route::get('/publisherReview', 'PublicController@publisherReview')->name('publisherReview');
-
-Route::get('/studentReview', 'PublicController@studentReview')->name('studentReview');
+Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publisherReview');
