@@ -95,8 +95,14 @@ class PublicController extends Controller
       $ads=$q->join('ads', 'ads.id', '=', 'publisher_ads.id')
         ->get();
 
+<<<<<<< HEAD
       $indicator=1;
       return view('mainPage.index',compact('login','ads','lowestPrice','indicator'));
+=======
+      $indicator = 1;
+
+      return view('mainPage.index',compact('login','ads','lowestPrice', 'indicator'));
+>>>>>>> 82dce988176deaa49209a7d78776d9644c4b2e25
     }
 
     public function login()
@@ -169,6 +175,13 @@ class PublicController extends Controller
         $login = 'layouts.master';
       }
       return view('userPage.studentAds.addStudentAd', compact('login'));
+    }
+
+    public function publisherReview(){
+      return view('userPage.profileReview.publisherReview');
+    }
+    public function studentReview(){
+      return view('userPage.profileReview.studentReview');
     }
 
 
