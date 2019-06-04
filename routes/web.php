@@ -43,3 +43,5 @@ Route::get('oglas/{id}', 'PublicController@adLink');
 
 
 Route::post('search', 'PublicController@search')->name('search');
+
+Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd');

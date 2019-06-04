@@ -12,6 +12,6 @@ class PublisherAds extends Model
    * @var array
    */
   protected $fillable = [
-      'id','title','description','price','category','street','number','squareFeet','numOfRooms','numOfBathrooms','typeOfHeating','tv','internet',
+      'id','headline','description','price','category','street','number','squareFeet','numOfRooms','numOfBathrooms','typeOfHeating','tv','internet',
   ];
 }

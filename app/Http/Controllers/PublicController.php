@@ -22,7 +22,7 @@ class PublicController extends Controller
       }else{
         $login = 'layouts.master';
       }
-        
+
       $ads = Ads::select('*')
         ->join('publisher_ads', 'ads.id', '=', 'publisher_ads.id')
         ->limit(4)
@@ -36,9 +36,9 @@ class PublicController extends Controller
           ->orderBy('publisher_ads.price', 'ASC')
           ->get();
 
-      
-        
-      
+
+
+
       $indicator = 0;
       return view('mainPage.index', compact('login', 'ads', 'lowestPrice', 'indicator'));
 
@@ -95,7 +95,8 @@ class PublicController extends Controller
       $ads=$q->join('ads', 'ads.id', '=', 'publisher_ads.id')
         ->get();
 
-      return view('mainPage.index',compact('login','ads','lowestPrice'));
+      $indicator=1;
+      return view('mainPage.index',compact('login','ads','lowestPrice','indicator'));
     }
 
     public function login()
