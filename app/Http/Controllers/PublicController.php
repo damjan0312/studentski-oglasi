@@ -16,12 +16,20 @@ class PublicController extends Controller
 {
     public function index()
     {
-      if($user = Auth::user())
-      {
-        $login = 'layouts.masterProfile';
-      }else{
-        $login = 'layouts.master';
-      }
+        if($user = Auth::user())
+        {
+          if(Auth::user()->admin == false){
+            $login = 'layouts.masterProfile';
+          }
+          else{
+            $login = 'layouts.masterProfileAdmin';
+          }
+         
+        }else{
+          $login = 'layouts.master';
+        }
+      
+     
         
       $ads = Ads::select('*')
         ->join('publisher_ads', 'ads.id', '=', 'publisher_ads.id')

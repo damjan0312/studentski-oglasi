@@ -43,14 +43,15 @@ class HomeController extends Controller
     {
       $role='student';
       $user=Auth::user();
-      if(Auth::user()->$role== false)
-      {
-        $student=Student::where('id', $user->id)->first();
-        return view('userPage.studentProfile',compact('user','student'));
-      }
-      else {
-          return view('userPage.publisherProfile',compact('user'));
-      }
+          if(Auth::user()->$role== false)
+          {
+            $student=Student::where('id', $user->id)->first();
+            return view('userPage.studentProfile',compact('user','student'));
+          }
+          else {
+              return view('userPage.publisherProfile',compact('user'));
+          }
+      
     }
 
     public function store(Request $request)
@@ -106,6 +107,10 @@ class HomeController extends Controller
     public function uploadImage()
     {
       return view('userPage.adPages.imageUpload');
+    }
+
+    public function adminPanel(){
+      return view('adminPanel.adminPanel');
     }
 
 
