@@ -7,6 +7,7 @@ use App\Ads;
 use App\AdsCreator;
 use App\Category;
 use App\PublisherAds;
+use App\StudentAds;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
@@ -123,6 +124,57 @@ class adUploadController extends Controller
             ->with('success','Uspesno ste postavili oglas!');
 
             //->with('image',$imageName);
+
+    }
+
+    public function addStudentAd()
+    {
+
+
+         /*request()->validate([
+              'headline' =>'required|string|min:5',
+              'street' =>'required|string|min:5',
+              'number' => 'required|string',
+              'squareFeet' => 'required|integer',
+              'description' =>'required|string|min:5|max:4000',
+              'price' =>'required|integer',
+              'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+          ]);*/
+
+
+
+          //$imageName = time().'.'.request()->image->getClientOriginalExtension();
+
+
+            /*'id','headline','categoryID','description'*/
+            //Auth::user()->student
+
+            $input=Input::only('headline','category','description');
+            $ad=new Ads;
+            $ad->headline=$input['headline'];
+            $ad->dateCreated=Carbon::now();
+            $ad->dateExpired=Carbon::now()->addDays(30);
+            $ad->categoryID=1;
+            $ad->description=$input['description'];
+            $ad->save();
+
+            $adsCreator=new AdsCreator;
+            $adsId=(Ads::all()->last())->id;
+            $adsCreator->adId=$adsId;
+            $adsCreator->userId=Auth::user()->id;
+            $adsCreator->save();
+
+            $studentAds=new StudentAds;
+            $studentAds->id=$adsId;
+            $studentAds->category=$input['category'];
+
+            $studentAds->save();
+            return back()
+
+              ->with('success','Uspesno ste postavili oglas!');
+
+              //->with('image',$imageName);
 
     }
 }

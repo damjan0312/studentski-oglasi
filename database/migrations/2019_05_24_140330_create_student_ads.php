@@ -15,9 +15,7 @@ class CreateStudentAds extends Migration
     {
         Schema::create('student_ads', function (Blueprint $table) {
             $table->integer('id');
-            $table->double('headline');
             $table->string('category');
-            $table->string('description');
             $table->foreign('id')->references('id')->on('ads');
             $table->timestamps();
         });

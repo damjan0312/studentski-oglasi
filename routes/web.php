@@ -42,7 +42,8 @@ Route::get('oglas/{id}', 'PublicController@adLink');
 
 Route::post('search', 'PublicController@search')->name('search');
 
-Route::get('/publisherReview', 'PublicController@publisherReview')->name('publisherReview');
-Route::get('/studentReview', 'PublicController@studentReview')->name('studentReview');
+Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd');
 
-Route::get('/adminPanel', 'HomeController@adminPanel')->name('adminPanel');
+Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publisherReview');
+
+Route::get('/adminPanel', 'PublicController@adminPanel')->name('adminPanel');

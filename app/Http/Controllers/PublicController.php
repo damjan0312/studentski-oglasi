@@ -11,26 +11,25 @@ use App\Ads;
 use App\PublisherAds;
 use App\AdsCreator;
 use App\User;
+use App\Student;
 
 class PublicController extends Controller
 {
     public function index()
     {
-        if($user = Auth::user())
-        {
-          if(Auth::user()->admin == false){
-            $login = 'layouts.masterProfile';
-          }
-          else{
-            $login = 'layouts.masterProfileAdmin';
-          }
-         
+   
+      if($user = Auth::user())
+      {
+        if(Auth::user()->admin){
+          $login = 'layouts.masterProfileAdmin';
         }else{
-          $login = 'layouts.master';
+          $login = 'layouts.masterProfile';
         }
-      
-     
         
+      }else{
+        $login = 'layouts.master';
+      }
+
       $ads = Ads::select('*')
         ->join('publisher_ads', 'ads.id', '=', 'publisher_ads.id')
         ->limit(4)
@@ -44,12 +43,13 @@ class PublicController extends Controller
           ->orderBy('publisher_ads.price', 'ASC')
           ->get();
 
-      
-        
-      
       $indicator = 0;
       return view('mainPage.index', compact('login', 'ads', 'lowestPrice', 'indicator'));
 
+    }
+
+    public function adminPanel(){
+      return view('adminPanel.adminPanel');
     }
 
     public function search()
@@ -102,9 +102,7 @@ class PublicController extends Controller
 
       $ads=$q->join('ads', 'ads.id', '=', 'publisher_ads.id')
         ->get();
-
       $indicator = 1;
-
       return view('mainPage.index',compact('login','ads','lowestPrice', 'indicator'));
     }
 
@@ -124,17 +122,22 @@ class PublicController extends Controller
     }
 
 
+    
     public function studentAd()
     {
       if($user = Auth::user())
       {
         $login = 'layouts.masterProfile';
-        return view('userPage.studentAds.studentAd', compact('login'));
       }
       else{
         $login = 'layouts.master';
-        return view('userPage.studentAds.studentAd', compact('login'));
       }
+      $ads = Ads::select('*')
+        ->join('student_ads', 'ads.id', '=', 'student_ads.id')
+        ->limit(4)
+        ->orderBy('student_ads.id', 'DESC')
+        ->get();
+      return view('userPage.studentAds.studentAd', compact('login','ads'));
     }
 
     public function adLink($id){
@@ -180,13 +183,35 @@ class PublicController extends Controller
       return view('userPage.studentAds.addStudentAd', compact('login'));
     }
 
-    public function publisherReview(){
-      return view('userPage.profileReview.publisherReview');
-    }
-    public function studentReview(){
-      return view('userPage.profileReview.studentReview');
-    }
+    public function profileReview($id){
+      if($user = Auth::user())
+      {
+        $login = 'layouts.masterProfile';
+      }
+      else{
+        $login = 'layouts.master';
+      }
 
+      $user=User::select('id','name','last_name','email','phoneNumber','student','numberOfAds')
+      ->where('id', $id)
+      ->first();
+      if($user->student == false)
+      {
+        $student= Student::select('faculty','yearOfStudy')
+          ->where('id', $id)
+          ->first();
+        if(empty($student->faculty) !=true)
+          $user->faculty= $student->faculty;
+        else
+          $user->faculty= "Nema informacija";
+        if(empty($student->yearOfStudy) !=true)
+          $user->yearOfStudy= $student->yearOfStudy;
+        else
+          $user->yearOfStudy= "Nema informacija";
+        return view('userPage.profileReview.studentReview', compact('login','user'));
+      }
+      return view('userPage.profileReview.publisherReview', compact('login','user'));
+    }
 
 
 }

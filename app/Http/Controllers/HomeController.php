@@ -35,6 +35,8 @@ class HomeController extends Controller
         else
           $login='layouts.master'; */
 
+        
+
         $login='layouts.masterProfile';
         return view('mainPage.index', compact('login'));
     }
@@ -43,36 +45,35 @@ class HomeController extends Controller
     {
       $role='student';
       $user=Auth::user();
-          if(Auth::user()->$role== false)
-          {
-            $student=Student::where('id', $user->id)->first();
-            return view('userPage.studentProfile',compact('user','student'));
-          }
-          else {
-              return view('userPage.publisherProfile',compact('user'));
-          }
-      
+
+        if(Auth::user()->$role== false)
+        {
+          $student=Student::where('id', $user->id)->first();
+          return view('userPage.studentProfile',compact('user','student'));
+        }
+        else {
+            return view('userPage.publisherProfile',compact('user'));
+        }
     }
+         
 
     public function store(Request $request)
     {
 
         if(Auth::user()->student==true)
         {
-          $input=Input::only('name','last_name','email','phoneNumber');
+          $input=Input::only('name','last_name','phoneNumber');
           Auth::user()->name=$input['name'];
           Auth::user()->last_name=$input['last_name'];
-          Auth::user()->email=$input['email'];
           Auth::user()->phoneNumber=$input['phoneNumber'];
           Auth::user()->save();
           $user=Auth::user();
           return view('userPage.publisherProfile',compact('user'));
         }
         else {
-          $input=Input::only('name','last_name','email','phoneNumber','faculty','yearOfStudy');
+          $input=Input::only('name','last_name','phoneNumber','faculty','yearOfStudy');
           Auth::user()->name=$input['name'];
           Auth::user()->last_name=$input['last_name'];
-          Auth::user()->email=$input['email'];
           Auth::user()->phoneNumber=$input['phoneNumber'];
           Auth::user()->save();
           $user=Auth::user();

@@ -20,7 +20,7 @@
                     <div class="d-flex">
                         <div class="form-group " style="width: 100%">
                             <b class="float-left h4"> Tip Oglasa </b>
-                            <select name="typeOfHeating" class="custom-select my-select" name="category">
+                            <select name="category" class="custom-select my-select" >
                                 <option value="">Izaberite tip oglasa</option>
                                 <option value="Prodaja Knjiga">Prodaja Knjiga</option>
                                 <option value="Trazim Cimera">Trazim Cimera</option>

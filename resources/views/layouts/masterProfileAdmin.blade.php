@@ -52,6 +52,7 @@
                     <i id="logo-o" class="fab fa-osi"></i>
 
                     </i></a>
+                    <span class="navbar-brand mb-0 h1">STUDENTSKI OGLASI - ADMIN</span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

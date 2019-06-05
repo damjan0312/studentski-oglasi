@@ -46,26 +46,26 @@
                     <a href="#" class="control_prev"><</a>
                         <a href="#" class="control_next">></a>
                         <a href="#" class="control_prev"><</a>
-                       
+
                         <ul>
                         @for ($i = 1; $i < count($pictures); $i++)
-                         
+
                              <li>
-                            <img src="{{URL::to('/')}}/images/{{$pictures[$i]}}"/> 
+                            <img src="{{URL::to('/')}}/images/{{$pictures[$i]}}"/>
                             </li>
-                       
+
                         @endfor
                         </ul>
-                            
-                            
-                        
+
+
+
 
                     </div>
 
 
                     <p id="ad-updated-text" class="text-dark"><small>Kreiran: {{$ad->dateCreated}}</small></p>
                     <p id="ad-updated-text" class="text-dark"><small>Istice: {{$ad->dateExpired}}</small></p>
-                    <p id="ad-updated-text" sclass="text-dark"><small>Postavio korisnik: <a  id="user" href="">{{$user->name." ".$user->last_name }}</a></small></p>
+                    <p id="ad-updated-text" sclass="text-dark"><small>Postavio korisnik: <a  id="user" href="/pregledProfila/{{$user->id}}">{{$user->name." ".$user->last_name }}</a></small></p>
                     <div class="col-sm text-justify" id="description-text">
                     {{$ad->description}}
 
@@ -129,13 +129,13 @@
                 <hr>
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
-                    
+
                             <label id="lbl_tv" for=""> <b>TV: </b></label>
-    <!-- test example -->  <label class="ml-4" for=""> 
+    <!-- test example -->  <label class="ml-4" for="">
                             @if( $ad->tv == true)
-                                Da    
+                                Da
                             @else
-                                Ne           
+                                Ne
                             @endif
                             </label>
                     </div>
@@ -144,11 +144,11 @@
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_internet" for=""> <b>Internet: </b></label>
-    <!-- test example -->  <label class="ml-4" for=""> 
+    <!-- test example -->  <label class="ml-4" for="">
                             @if( $ad->internet == true)
-                                Da    
+                                Da
                             @else
-                                Ne           
+                                Ne
                             @endif
 
                             </label>
@@ -159,12 +159,12 @@
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_airCondition" for=""> <b>KLIMA UREDJAJ: </b></label>
-    <!-- test example -->  <label class="ml-4" for=""> 
-        
+    <!-- test example -->  <label class="ml-4" for="">
+
                             @if( $ad->airCondition == true)
-                                Da    
+                                Da
                             @else
-                                Ne           
+                                Ne
                             @endif
 
                             </label>
@@ -174,13 +174,13 @@
                 <div class="d-flex">
                     <div class="form-inline" style="font-size: 1.5em;">
                             <label id="lbl_parking" for=""> <b>PARKING: </b></label>
-    <!-- test example -->  <label class="ml-4" for=""> 
+    <!-- test example -->  <label class="ml-4" for="">
                            @if( $ad->parking == true)
-                                Da    
+                                Da
                             @else
-                                Ne           
+                                Ne
                             @endif
-        
+
                             </label>
                     </div>
                 </div>
