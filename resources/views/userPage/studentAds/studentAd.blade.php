@@ -49,22 +49,28 @@
                     NAJNOVIJI OGLASI <i class="fas fa-ad" style="color: rgb(228, 91, 12);"></i>
                 </p>
 <div class="row">
+                @foreach ($ads as $ad)
                 <div class="col-md-3 text-center">
+
                     <div class="ad p-3">   <!-- pocetak kartice -->
 
                                     <div class="card p-2">
 
                                     <div class="card-block">
-                                    <h4 class="card-title font-weight-bold">Prodaja knjiga</h4>
+                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
                                     <hr>
-                                    <p class="card-text">{{$ads[0]->headline}}</p>
-                                    <a  id="ad-linkk" href="#">Pogledaj oglas</a>
+                                    <p class="card-text">{{$ad->description}}</p>
+                                    <hr/>
+                                    <p>Kontakt: {{$user->phoneNumber}}</p>
+                                    <p id="ad-updated-text" class="text-dark"><small>Postavio korisnik: <a  id="user" href="/pregledProfila/{{$user->id}}">{{$user->name." ".$user->last_name }}</a></small></p>
                                     </div>
                                      </div>
                         </div>
 
                     </div><!-- kraj kartice -->
+                    @endforeach
 
+</div>
 
 
 

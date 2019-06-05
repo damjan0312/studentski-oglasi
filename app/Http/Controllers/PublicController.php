@@ -137,7 +137,7 @@ class PublicController extends Controller
         ->limit(4)
         ->orderBy('student_ads.id', 'DESC')
         ->get();
-      return view('userPage.studentAds.studentAd', compact('login','ads'));
+      return view('userPage.studentAds.studentAd', compact('login','ads', 'user'));
     }
 
     public function adLink($id){
