@@ -304,9 +304,9 @@
 
 
                                     <!-- pocetak dela za fotografije -->
-                                    <div id="photo-part" class="mt-4" style="display:none;">
+                                    <div id="photo-part" class="mt-4 text-center" style="display:none;">
 
-                                        <input type="file" name="image[]" class="form-control" multiple>
+                                        <input type="file" name="image[]" class="multi" multiple>
 
 
                                     </div>
@@ -319,7 +319,8 @@
 
                                     <div id="final-part" class="mt-4" style="display:none;">
 
-                                          <h1>FINAL</h1>
+                                          <h1>Objaviti oglas?</h1>
+                                          <h2>Izmene su jos uvek moguce</h2>
 
                                     </div>
 

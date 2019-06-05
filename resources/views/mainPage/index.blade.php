@@ -79,8 +79,7 @@
     </section>
 
     <section id="ad-section" class="text-dark ">
-        <a class="pl-5" href="{{route('index')}}">Ocisti rezultate pretrage</a>
-
+    
 
         @if($indicator!=1)
         <div id="ordinary-list">
