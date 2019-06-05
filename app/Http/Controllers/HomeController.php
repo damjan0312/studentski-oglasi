@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\student;
+use App\AdsCreator;
+use App\Ads;
+use App\PublisherAds;
+use App\StudentAds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
@@ -35,7 +39,7 @@ class HomeController extends Controller
         else
           $login='layouts.master'; */
 
-        
+
 
         $login='layouts.masterProfile';
         return view('mainPage.index', compact('login'));
@@ -45,17 +49,23 @@ class HomeController extends Controller
     {
       $role='student';
       $user=Auth::user();
+      $ads=  Ads::select('*')
+        ->join('ads_creators', 'ads.id', '=', 'ads_creators.id')
+        ->where('ads_creators.userId','=',Auth::user()->id)
+        ->orderBy('ads.id', 'DESC')
+        ->get();
 
-        if(Auth::user()->$role== false)
-        {
-          $student=Student::where('id', $user->id)->first();
-          return view('userPage.studentProfile',compact('user','student'));
-        }
-        else {
-            return view('userPage.publisherProfile',compact('user'));
-        }
+      if(Auth::user()->$role== false)
+      {
+        $student=Student::where('id', $user->id)->first();
+
+        return view('userPage.studentProfile',compact('user','student','ads'));
+      }
+      else {
+        return view('userPage.publisherProfile',compact('user','ads'));
+      }
     }
-         
+
 
     public function store(Request $request)
     {
@@ -114,9 +124,28 @@ class HomeController extends Controller
       return view('adminPanel.adminPanel');
     }
 
+    public function deleteAd()
+    {
+      $id=Input::get('id');
+      $ad=AdsCreator::where([
+                    ['userId','=',Auth::user()->id],
+                    ['adId', '=', $id]
+                ]);
+     $ad->delete();
+      $ad= Ads::where('id','=',$id);
+      $ad->delete();
+      if(Auth::user()->student==false)
+      {
+        $studAd= StudentAds::where('id','=',$id);
+        $studAd->delete();
+      }
+      else
+      {
+        $pubAd= PublisherAds::where('id','=',$id);
+        $pubAd->delete();
+      }
+      return redirect()->action('HomeController@profile');
 
-
-
-
+    }
 
 }

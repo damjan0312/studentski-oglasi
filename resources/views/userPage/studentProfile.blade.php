@@ -128,10 +128,21 @@
 
 
          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <p class="display-4">Ucitati objavljenje oglase</p>
+              <p class="display-4">Objavljeni oglasi</p>
             </div>
-            
-          </div> 
+            <form class="" method="POST" action="delete">
+                @csrf
+            @foreach($ads as $ad)
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{$ad->headline}}</h5>
+                <p class="card-text">{{$ad->description}}</p>
+                <button name="id" value="{{$ad->id}}" class="btn btn-danger">Obrisi</button>
+              </div>
+            </div>
+            @endforeach
+            </form >
+          </div>
 
         </div>
       </div>
