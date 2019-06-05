@@ -328,7 +328,7 @@
 
                                     <!-- BTN KRAJ-->
                                     <button type="submit" id="submit" class="btn  float-right"
-                                    value="Kraj" style="display: none;">Kraj</button>
+                                    value="Kraj" style="display: none;">OBJAVI</button>
                                     <!-- prikazati submit dugme tek na 3. tablici-->
 
                                 </form>
