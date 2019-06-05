@@ -45,3 +45,5 @@ Route::post('search', 'PublicController@search')->name('search');
 Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd');
 
 Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publisherReview');
+
+Route::get('/adminPanel', 'PublicController@adminPanel')->name('adminPanel');

@@ -37,6 +37,8 @@ class HomeController extends Controller
         else
           $login='layouts.master'; */
 
+
+
         $login='layouts.masterProfile';
         return view('mainPage.index', compact('login'));
     }
@@ -45,6 +47,7 @@ class HomeController extends Controller
     {
       $role='student';
       $user=Auth::user();
+
       if(Auth::user()->$role== false)
       {
         $student=Student::where('id', $user->id)->first();
@@ -59,6 +62,7 @@ class HomeController extends Controller
           return view('userPage.publisherProfile',compact('user'));
       }
     }
+
 
     public function store(Request $request)
     {
@@ -111,6 +115,10 @@ class HomeController extends Controller
     public function uploadImage()
     {
       return view('userPage.adPages.imageUpload');
+    }
+
+    public function adminPanel(){
+      return view('adminPanel.adminPanel');
     }
 
 
