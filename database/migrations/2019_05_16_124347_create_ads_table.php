@@ -20,7 +20,7 @@ class CreateAdsTable extends Migration
           $table->date('dateExpired');
           $table->integer('categoryID');
           $table->string('description');
-          $table->foreign('categoryID')->references('id')->on('category');
+          $table->foreign('categoryID')->references('id')->on('category')->onDelete('cascade');;
           $table->timestamps();
         });
     }

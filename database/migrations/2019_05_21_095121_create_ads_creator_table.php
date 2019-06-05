@@ -17,8 +17,8 @@ class CreateAdsCreatorTable extends Migration
             $table->bigIncrements('id');
             $table->integer('userId')->default(0);
             $table->integer('adId')->default(0);
-            $table->foreign('userId')->references('id')->on('users');
-            $table->foreign('adId')->references('id')->on('ads');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('adId')->references('id')->on('ads')->onDelete('cascade');;
             $table->timestamps();
         });
     }

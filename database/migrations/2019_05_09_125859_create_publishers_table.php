@@ -18,7 +18,7 @@ class CreatePublishersTable extends Migration
           $table->rememberToken();
           $table->timestamps();
 
-          $table->foreign('id')->references('id')->on('users');
+          $table->foreign('id')->references('id')->on('users')->onDelete('cascade');;
           $table->primary('id');
         });
     }

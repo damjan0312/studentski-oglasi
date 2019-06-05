@@ -30,7 +30,7 @@ class CreatePublisheradsTable extends Migration
           $table->boolean('parking')->default(false);
           $table->string('images')->default('');
 
-          $table->foreign('id')->references('id')->on('ads');
+          $table->foreign('id')->references('id')->on('ads')->onDelete('cascade');;
           $table->timestamps();
         });
     }

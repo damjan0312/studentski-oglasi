@@ -19,9 +19,9 @@ class CreateStudentsTable extends Migration
           $table->timestamps();
           $table->string('faculty')->default('');
           $table->integer('yearOfStudy')->default(1);
-          $table->foreign('id')->references('id')->on('users');
+          $table->foreign('id')->references('id')->on('users')->onDelete('cascade');;
           $table->primary('id');
-          
+
         });
     }
 
