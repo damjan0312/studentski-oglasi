@@ -6,6 +6,7 @@ use App\student;
 use App\AdsCreator;
 use App\Ads;
 use App\PublisherAds;
+use App\StudentAds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
@@ -133,9 +134,17 @@ class HomeController extends Controller
      $ad->delete();
       $ad= Ads::where('id','=',$id);
       $ad->delete();
-      $pubAd= PublisherAds::where('id','=',$id);
-      $pubAd->delete();
-    
+      if(Auth::user()->student==false)
+      {
+        $studAd= StudentAds::where('id','=',$id);
+        $studAd->delete();
+      }
+      else
+      {
+        $pubAd= PublisherAds::where('id','=',$id);
+        $pubAd->delete();
+      }
+      return redirect()->action('HomeController@profile');
 
     }
 
