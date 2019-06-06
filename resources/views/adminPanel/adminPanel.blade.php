@@ -18,29 +18,34 @@
 				</nav>
 				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<form >
                     <table class="users w-100 text-center text-dark">
                         <tr>
-							<th>Rb</th>
+													<th>Rb</th>
                             <th>Ime</th>
-                            <th>Prezime</th> 
+                            <th>Prezime</th>
                             <th>E-mail</th>
                             <th>Admin</th>
                             <th>Student/Izdavac</th>
                             <th>Broj Telefona</th>
-							<th>Broj Oglasa</th>
-							<th>Ukloni Nalog</th>
+														<th>Broj Oglasa</th>
+														<th>Ukloni Nalog</th>
                         </tr>
+												@foreach($users as $user)
                         <tr>
-                            <td>Jill</td>
-                            <td>Smith</td> 
-                            <td>50</td>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->last_name}}</td>
+														<td>{{$user->email}}</td>
+														<td>{{$user->admin}}</td>
+														<td>{{$user->student}}</td>
+														<td>{{$user->phoneNumber}}</td>
+														<td>{{$user->numberOfAds}}</td>
+														<td> <button name="id" value="{{$user->id}}" className="btn btn-danger">Obrisi </button> </td>
                         </tr>
-                        <tr>
-                            <td>Eve</td>
-                            <td>Jackson</td> 
-                            <td>94</td>
-                        </tr>
+                        @endforeach
                     </table>
+									</form >
 					</div>
 					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 					<table class="users w-100 text-center text-dark">
@@ -58,18 +63,18 @@
 							<th>Internet</th>
 							<th>Klima Uredjaj</th>
 							<th>Parking</th>
-                            <th>Kreiran</th> 
+                            <th>Kreiran</th>
                             <th>Istice</th> -->
                             <th>Ukloni Oglas</th>
                         </tr>
                         <tr>
                             <td>Jill</td>
-                            <td>Smith</td> 
+                            <td>Smith</td>
                             <td>50</td>
                         </tr>
                         <tr>
                             <td>Eve</td>
-                            <td>Jackson</td> 
+                            <td>Jackson</td>
                             <td>94</td>
                         </tr>
                     </table>
@@ -80,24 +85,24 @@
 							<th>Rb</th>
 							<th>Naslov</th>
 							<th>Kategorija</th>
-                            <th>Kreiran</th> 
+                            <th>Kreiran</th>
                             <th>Istice</th>
                             <th>Ukloni Oglas</th>
                         </tr>
                         <tr>
                             <td>Jill</td>
-                            <td>Smith</td> 
+                            <td>Smith</td>
                             <td>50</td>
                         </tr>
                         <tr>
                             <td>Eve</td>
-                            <td>Jackson</td> 
+                            <td>Jackson</td>
                             <td>94</td>
                         </tr>
                     </table>
 					</div>
 				</div>
-			
+
 			</div>
 		</div>
 	</div>

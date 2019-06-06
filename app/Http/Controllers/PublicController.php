@@ -18,7 +18,7 @@ class PublicController extends Controller
 {
     public function index()
     {
-   
+
       if($user = Auth::user())
       {
         if(Auth::user()->admin){
@@ -26,7 +26,7 @@ class PublicController extends Controller
         }else{
           $login = 'layouts.masterProfile';
         }
-        
+
       }else{
         $login = 'layouts.master';
       }
@@ -47,10 +47,6 @@ class PublicController extends Controller
       $indicator = 0;
       return view('mainPage.index', compact('login', 'ads', 'lowestPrice', 'indicator'));
 
-    }
-
-    public function adminPanel(){
-      return view('adminPanel.adminPanel');
     }
 
     public function search()
@@ -108,7 +104,7 @@ class PublicController extends Controller
     }
 
     public function searchStudentAds(){
-     
+
       if($user = Auth::user())
       {
         $login = 'layouts.masterProfile';
@@ -129,9 +125,11 @@ class PublicController extends Controller
         $q->where('category',$category);
         $category="a";
       }
-    
+
 
       $ads=$q->join('ads', 'ads.id', '=', 'student_ads.id')
+        ->join('ads_creators', 'ads_creators.adId', '=','ads.id')
+        ->join('users', 'users.id','=','ads_creators.userId')
         ->get();
       $indicator = 1;
       return view('userPage.studentAds.studentAd',compact('login','ads', 'indicator', 'user'));
@@ -153,7 +151,7 @@ class PublicController extends Controller
     }
 
 
-    
+
     public function studentAd()
     {
       if($user = Auth::user())
@@ -165,6 +163,8 @@ class PublicController extends Controller
       }
       $ads = Ads::select('*')
         ->join('student_ads', 'ads.id', '=', 'student_ads.id')
+        ->join('ads_creators', 'ads_creators.adId', '=','ads.id')
+        ->join('users', 'users.id','=','ads_creators.userId')
         ->orderBy('student_ads.id', 'DESC')
         ->get();
         $indicator = 0;

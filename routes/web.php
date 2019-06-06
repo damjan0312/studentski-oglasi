@@ -46,8 +46,8 @@ Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd')
 
 Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publisherReview');
 
-Route::get('/adminPanel', 'PublicController@adminPanel')->name('adminPanel');
-
+Route::get('/adminPanel', 'AdminController@adminPanel')->name('adminPanel');
 
 Route::post('searchStudentAds', 'PublicController@searchStudentAds')->name('searchStudentAds');
+
 Route::post('delete', 'HomeController@deleteAd')->name('delete');
