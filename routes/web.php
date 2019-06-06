@@ -48,4 +48,6 @@ Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publ
 
 Route::get('/adminPanel', 'PublicController@adminPanel')->name('adminPanel');
 
+
+Route::post('searchStudentAds', 'PublicController@searchStudentAds')->name('searchStudentAds');
 Route::post('delete', 'HomeController@deleteAd')->name('delete');

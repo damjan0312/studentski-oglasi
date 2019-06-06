@@ -1,11 +1,11 @@
 html{
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 
     scroll-behavior: smooth;
 }
 body{
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background-color:  rgba(194, 194, 194, 0.75);
 }
@@ -104,3 +104,8 @@ body{
 
 }
 
+#cards:hover {
+    transition: background-color  1s ease;
+    background-color: rgb(252, 168, 119);
+
+}

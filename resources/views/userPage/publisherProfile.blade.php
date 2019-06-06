@@ -123,15 +123,17 @@
             <p class="display-4">Objavljenji oglasi</p> 
             <form class="" method="POST" action="delete">
                 @csrf
-            @foreach($ads as $ad)
+         @foreach($ads as $ad)
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">{{$ad->headline}}</h5>
                 <p class="card-text">{{$ad->description}}</p>
+                <a id="ad-link" href="/oglas/{{$ad->id}}">Pogledaj oglas</a>
                   <button name="id" value="{{$ad->id}}" class="btn btn-danger">Obrisi</button>
               </div>
-            </div>
+            </div> 
             @endforeach
+
             </form >
             </div>
 

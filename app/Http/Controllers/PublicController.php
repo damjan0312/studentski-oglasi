@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Ads;
 use App\PublisherAds;
+use App\StudentAds;
 use App\AdsCreator;
 use App\User;
 use App\Student;
@@ -106,6 +107,36 @@ class PublicController extends Controller
       return view('mainPage.index',compact('login','ads','lowestPrice', 'indicator'));
     }
 
+    public function searchStudentAds(){
+     
+      if($user = Auth::user())
+      {
+        $login = 'layouts.masterProfile';
+      }
+      else {
+        $login = 'layouts.master';
+      }
+
+      $ads=[];
+
+      $input=Input::only('category');
+      $category=$input['category'];
+
+      $q= StudentAds::query()->select('*');
+
+      if(!empty(trim($category)))
+      {
+        $q->where('category',$category);
+        $category="a";
+      }
+    
+
+      $ads=$q->join('ads', 'ads.id', '=', 'student_ads.id')
+        ->get();
+      $indicator = 1;
+      return view('userPage.studentAds.studentAd',compact('login','ads', 'indicator', 'user'));
+    }
+
     public function login()
     {
       return view('auth.login');
@@ -134,10 +165,10 @@ class PublicController extends Controller
       }
       $ads = Ads::select('*')
         ->join('student_ads', 'ads.id', '=', 'student_ads.id')
-        ->limit(4)
         ->orderBy('student_ads.id', 'DESC')
         ->get();
-      return view('userPage.studentAds.studentAd', compact('login','ads'));
+        $indicator = 0;
+      return view('userPage.studentAds.studentAd', compact('login','ads', 'user', 'indicator'));
     }
 
     public function adLink($id){
