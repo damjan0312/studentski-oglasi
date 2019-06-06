@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\student;
+use App\Student;
 use App\AdsCreator;
 use App\Ads;
 use App\PublisherAds;
