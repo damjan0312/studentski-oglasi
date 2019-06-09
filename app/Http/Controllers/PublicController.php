@@ -18,7 +18,7 @@ class PublicController extends Controller
 {
     public function index()
     {
-   
+
       if($user = Auth::user())
       {
         if(Auth::user()->admin){
@@ -26,7 +26,7 @@ class PublicController extends Controller
         }else{
           $login = 'layouts.masterProfile';
         }
-        
+
       }else{
         $login = 'layouts.master';
       }
@@ -47,10 +47,6 @@ class PublicController extends Controller
       $indicator = 0;
       return view('mainPage.index', compact('login', 'ads', 'lowestPrice', 'indicator'));
 
-    }
-
-    public function adminPanel(){
-      return view('adminPanel.adminPanel');
     }
 
     public function search()
@@ -108,7 +104,7 @@ class PublicController extends Controller
     }
 
     public function searchStudentAds(){
-     
+
       if($user = Auth::user())
       {
         $login = 'layouts.masterProfile';
@@ -155,7 +151,7 @@ class PublicController extends Controller
     }
 
 
-    
+
     public function studentAd()
     {
       if($user = Auth::user())

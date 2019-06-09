@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\student;
+use App\Student;
 use App\AdsCreator;
 use App\Ads;
 use App\PublisherAds;
@@ -79,7 +79,7 @@ class HomeController extends Controller
           Auth::user()->phoneNumber=$input['phoneNumber'];
           Auth::user()->save();
           $user=Auth::user();
-          return view('userPage.publisherProfile',compact('user'));
+          //return view('userPage.publisherProfile',compact('user'));
         }
         else {
           $input=Input::only('name','last_name','phoneNumber','faculty','yearOfStudy');
@@ -92,9 +92,9 @@ class HomeController extends Controller
           $student->faculty=$input['faculty'];
           $student->yearOfStudy=$input['yearOfStudy'];
           $student->save();
-          return view('userPage.studentProfile',compact('user','student'));
+          //return view('userPage.studentProfile',compact('user','student'));
         }
-
+        return redirect()->action('HomeController@profile');
     }
 
     public function ad()
@@ -119,10 +119,6 @@ class HomeController extends Controller
     public function uploadImage()
     {
       return view('userPage.adPages.imageUpload');
-    }
-
-    public function adminPanel(){
-      return view('adminPanel.adminPanel');
     }
 
     public function deleteAd()
@@ -153,5 +149,7 @@ class HomeController extends Controller
       return redirect()->action('HomeController@profile');
 
     }
+
+    
 
 }
