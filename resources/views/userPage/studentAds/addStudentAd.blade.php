@@ -7,6 +7,40 @@
 <div class="home-container">
 
     <section id="add-section" class="text-white">
+                    @if ($message = Session::get('success'))
+
+                <div class="alert alert-success alert-block">
+
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+
+                        <strong>{{ $message }}</strong>
+
+                </div>
+
+                @endif
+
+
+
+                @if (count($errors) > 0)
+
+                    <div class="alert alert-danger">
+
+                        <strong>Ups!</strong> Izgleda da je doslo do problema sa vasim oglasom.
+
+                        <ul>
+
+                            @foreach ($errors->all() as $error)
+
+                                <li>{{ $error }}</li>
+
+                            @endforeach
+
+                        </ul>
+
+                    </div>
+
+                @endif
+    
 
         <form action="{{ route('StudentAd') }}"  method="POST" enctype="multipart/form-data">
             @csrf
@@ -25,7 +59,7 @@
                                 <option value="Prodaja Knjiga">Prodaja Knjiga</option>
                                 <option value="Trazim Cimera">Trazim Cimera</option>
                                 <option value="Privatni Casovi">Privatni Casovi</option>
-                                <option value="Ostalo">Ostalo</option>
+                                <option value="Ostalo">Ostalo (Zurke, Izlasci...)</option>
                             </select>
 
                         </div>
@@ -34,9 +68,12 @@
                     <div class="d-flex">
                         <div class="form-group " style="width: 100%">
                             <b class="float-left h4"> Naslov Oglasa </b>
-                            <input id="headline" type="text"
+                            <input 
+                                id="headline" 
+                                type="text"
+                                name="headline"
                                 class="form-control form-control{{ $errors->has('headline') ? ' is-invalid' : '' }}"
-                                placeholder="" name="headline">
+                                placeholder="">
 
                             @if ($errors->has('headline'))
                             <span class="invalid-feedback" role="alert">
@@ -47,15 +84,18 @@
                     </div>
 
                     <div class="d-flex ">
-                        <div class="form-group " style="width: 100%">
+                        <div class="form-group" style="width: 100%">
                             <b class="float-left h4"> Opis Oglasa </b>
-                            <textarea id="description-textarea" type="text"
-                                class="form-control form-control{{ $errors->has('description-textarea') ? ' is-invalid' : '' }}"
-                                placeholder="Opisite Svoj Oglas Ovde..." name="description"></textarea>
+                            <textarea  
+                                id="description-textarea"  
+                                type="text"
+                                name="description"
+                                class="form-control form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                                placeholder="Opisite Svoj Oglas Ovde..."></textarea>
 
-                            @if ($errors->has('headline'))
+                            @if ($errors->has('description'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('description-textarea') }}</strong>
+                                <strong>{{ $errors->first('description') }}</strong>
                             </span>
                             @endif
                         </div>
@@ -72,6 +112,8 @@
                 </div> <!-- kraj col-sm-8 div -->
         </form>
         <div id="add-div" class="col-sm-4">
+
+        
 
         </div>
 

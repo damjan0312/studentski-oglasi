@@ -47,7 +47,7 @@
 
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
             <div class="container">
-                <a href="index" class="navbar-brand text-uppercase"> 
+                <a href="{{route('index')}}" class="navbar-brand text-uppercase"> 
                     <i id="logo-s" class="fab fa-stripe-s fa-2x"> 
                     <i id="logo-o" class="fab fa-osi"></i>
 
@@ -59,6 +59,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul class="navbar-nav ml-auto">
+                    
 
                         <li class="nav-item">
                             <a href="{{route('adminPanel')}}"  class="nav-link">+Upravljaj oglasima</a>

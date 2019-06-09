@@ -51,10 +51,18 @@
                                       </div>
 
                                 @endif
-                                <div class="row justify-content-center pb-3">
-                                    <button class="btn  btn-lg ml-4 active" id="step1">1. Osnovni podaci</button>
-                                    <button class="btn  btn-lg ml-4" id="step2">2. Fotografije</button>
-                                    <button class="btn  btn-lg ml-4" id="step3">3. Objava</button>
+                                <div class="row pb-3  justify-content-center">
+                                    <div class="col-md-3">
+                                        <button id="step1" class="btn  btn-lg active" id="step1">1. Osnovni podaci</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="step2" class="btn  btn-lg" id="step2">2. Fotografije</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="step3" class="btn  btn-lg" id="step3">3. Objava</button>
+                                    </div>
+                                  
+                                   
 
                                 </div>
 
@@ -186,7 +194,7 @@
 
                                         <hr/>
 
-                                        <div class="d-flex ml-4 pr-4">
+                                        <div class="d-flex ml-4 mr-4">
                                             <div class="form-group ">
                                             <b class="float-left"> TV </b>
                                             <input id="cb-tv" name="tv" type="checkbox" class="ml-2 form-control{{ $errors->has('tv') ? ' is-invalid' : '' }}" style="float: left; margin-top: 5px;>">

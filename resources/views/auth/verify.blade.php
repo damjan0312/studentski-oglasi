@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
+
+
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
 <section id="home-section">
     <div class="dark-overlay">
         <div class="home-inner container">

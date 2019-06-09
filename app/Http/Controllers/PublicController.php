@@ -129,9 +129,11 @@ class PublicController extends Controller
         $q->where('category',$category);
         $category="a";
       }
-    
+
 
       $ads=$q->join('ads', 'ads.id', '=', 'student_ads.id')
+        ->join('ads_creators', 'ads_creators.adId', '=','ads.id')
+        ->join('users', 'users.id','=','ads_creators.userId')
         ->get();
       $indicator = 1;
       return view('userPage.studentAds.studentAd',compact('login','ads', 'indicator', 'user'));
@@ -165,6 +167,8 @@ class PublicController extends Controller
       }
       $ads = Ads::select('*')
         ->join('student_ads', 'ads.id', '=', 'student_ads.id')
+        ->join('ads_creators', 'ads_creators.adId', '=','ads.id')
+        ->join('users', 'users.id','=','ads_creators.userId')
         ->orderBy('student_ads.id', 'DESC')
         ->get();
         $indicator = 0;

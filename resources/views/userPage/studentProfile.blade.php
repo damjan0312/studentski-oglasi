@@ -18,16 +18,7 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-center row">
-
-            <div class="col-3">
-              <i class="fa fa-camera fa-3x upload-button"></i>
-              <input class="file-upload" type="file" accept="image/*"/>
-            </div>
-            <div class="col-9">
-              <h4>Promenite svoju profilnu sliku</h4>
-            </div>
-          </div>
+         
           <div class="col my-4"  style="border-top: 3px solid; border-color: rgba(236, 99, 19);">
             <p>Ime: {{($user->name)}}</p>
             <p>Prezime: {{($user->last_name)}}</p>
@@ -63,9 +54,9 @@
               <!-- UREDI PROFIL -->
               <form class="form-horizontal"  method="POST" action="/updateProfil">
                 @csrf
-                <div class=" row">
+                <div class=" row justify-content-center">
 
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Ime:</label>
                       <div class="col-lg-8">
@@ -128,21 +119,25 @@
 
 
          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <p class="display-4">Objavljeni oglasi</p>
-           
+             
             <form class="" method="POST" action="delete">
                 @csrf
-                <ul class="list-group">
-                @foreach($ads as $ad)
-                    <div class="card col-sm-4" style="width: 18rem;">
+              <div class="row"> 
+                    @foreach($ads as $ad)
+                    
+                  <div class="card col-sm-4 ml-2">
                       <div class="card-body">
-                        <h5 class="card-title">{{$ad->headline}}</h5>
-                       <p class="card-text">{{$ad->description}}</p>
+                        <h5 class="card-title"><b>{{$ad->headline}}</b></h5>
+                        <hr/>
+                        <p class="card-text">{{$ad->headline}}</p>
+                      
                         <button name="id" value="{{$ad->id}}" class="btn btn-danger">Obrisi</button>
                       </div>
                     </div>
-                  @endforeach
-                 
+
+                    @endforeach
+                       
+                  
                 </div>
            
             </form >
@@ -181,6 +176,7 @@
 
 <script src="{{asset('assets/js/uploadPicture.js')}}"></script>
 <script src="{{asset('assets/js/login.js')}}"></script>
+<script src="{{asset('assets/js/popOver.js')}}"></script>
 
 <!-- /body --->
 

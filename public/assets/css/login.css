@@ -7,16 +7,21 @@ body {
   height: 100%;
  }
 
+ .home-container{
+  min-height: 100%;
+}
+
 #home-section {
   background: url("../../assets/img/img1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
   min-height: 100%;
   
 }
   
-#home-section .dark-overlay {
+.dark-overlay {
   position: absolute;
   top: 0;
   left: 0;

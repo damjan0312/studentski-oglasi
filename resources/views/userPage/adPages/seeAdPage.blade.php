@@ -42,10 +42,10 @@
 
                     <div id="slider">
 
-                    <a href="#" class="control_next">></a>
-                    <a href="#" class="control_prev"><</a>
-                        <a href="#" class="control_next">></a>
-                        <a href="#" class="control_prev"><</a>
+                    <a  class="control_next">></a>
+                    <a  class="control_prev"><</a>
+                        <a class="control_next">></a>
+                        <a  class="control_prev"><</a>
 
                         <ul>
                         @for ($i = 1; $i < count($pictures); $i++)

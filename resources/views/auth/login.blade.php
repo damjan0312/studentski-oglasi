@@ -2,7 +2,9 @@
 @section ('content')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/login.css')}}">
 
-<section id="home-section">
+<div class="home-container">
+
+    <section id="home-section">
         <div class="dark-overlay">
             <div class="home-inner container">
                 <div class="row">
@@ -104,13 +106,9 @@
 
 
 
-
-
-
-                </div>
             </div>
         </div>
     </section>
-
+    </div>
 
 @endsection

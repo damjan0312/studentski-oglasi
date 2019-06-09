@@ -20,14 +20,14 @@
                     
                     <div class="d-flex justify-content-start">
                         
-                        <a href=""> <i class="fas fa-angle-double-right mr-2"></i> Postani član naše zajednice</a>
+                        <a href="{{route('login')}}"> <i class="fas fa-angle-double-right mr-2"></i> Postani član naše zajednice</a>
                     </div>
                     
                     <div class="d-flex justify-content-start">
-                        <a href=""> <i class="fas fa-angle-double-right mr-2"></i> Pretražuj najbolje stanove u Nišu</a>
+                        <a href="{{route('index')}}"> <i class="fas fa-angle-double-right mr-2"></i> Pretražuj najbolje stanove u Nišu</a>
                     </div>
                     <div class="d-flex justify-content-start">
-                        <a href=""> <i class="fas fa-angle-double-right mr-2"></i> Komuniciraj sa ostalim studentima putem oglasa</a>
+                        <a href="{{route('studentAd')}}"> <i class="fas fa-angle-double-right mr-2"></i> Svi studentski oglasi na jednom mestu</a>
                     </div>
 
                </div>

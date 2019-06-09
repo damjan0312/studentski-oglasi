@@ -21,9 +21,9 @@ Auth::routes(['verify' => true]);
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
-Route::get('/profil','HomeController@profile')->name('profile');
+Route::get('/profil','HomeController@profile')->name('profile')->middleware('verified');
 
-Route::get('/dodajOglas', 'HomeController@ad')->name('ad');
+Route::get('/dodajOglas', 'HomeController@ad')->name('ad')->middleware('verified');;
 
 //Route::get('/index', 'HomeController@index')->name('index');
 Route::get('/index', 'PublicController@index')->name('index');
@@ -42,12 +42,20 @@ Route::get('oglas/{id}', 'PublicController@adLink');
 
 Route::post('search', 'PublicController@search')->name('search');
 
-Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd');
+Route::post('/dodajOglas', 'adUploadController@addStudentAd')->name('StudentAd')->middleware('verified');
 
 Route::get('/pregledProfila/{id}', 'PublicController@profileReview')->name('publisherReview');
 
-Route::get('/adminPanel', 'PublicController@adminPanel')->name('adminPanel');
-
-
 Route::post('searchStudentAds', 'PublicController@searchStudentAds')->name('searchStudentAds');
+
 Route::post('delete', 'HomeController@deleteAd')->name('delete');
+
+Route::get('/adminPanel', 'AdminController@adminPanel')->name('adminPanel');
+
+Route::post('delete', 'HomeController@deleteAd')->name('delete');
+
+Route::post('deleteUser', 'AdminController@deleteUser')->name('deleteUser');
+
+Route::post('deletePubAd', 'AdminController@deletePubAd')->name('deletePubAd');
+
+Route::post('deleteStudAd', 'AdminController@deleteStudAd')->name('deleteStudAd');

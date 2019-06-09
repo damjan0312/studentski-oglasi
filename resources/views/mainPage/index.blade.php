@@ -175,13 +175,14 @@
             @else
 
             <div id="search-list" class="newest-ads">
-
+            <a href="/index" class="pl-4" style="color: rgba(236, 99, 19); text-decoration:none;">Ocisti rezultate pretrage</a>
                 <div class="row">
+              
                     <p class="h1 ml-5 mt-2 nowrap">REZULTATI PRETRAGE <i style="color: rgba(236, 99, 19);"
                             class="fas fa-search"></i></p>
                 </div>
                 <hr>
-                <div class="row">
+                <div class="row" id="newest-ads-row">
 
                     @if(count($ads) == 0)
                     <p class="text-dark display-4 pl-5"> Nema Rezultata Pretrage <i style="color: rgba(236, 99, 19);"
@@ -189,6 +190,7 @@
                     @else
                     @foreach ($ads as $ad)
                     <div class="col-md-3 text-center">
+                    <a href="/oglas/{{$ad->id}}" style="color: inherit; text-decoration:none;">
                         <div class="ad p-3">
 
                             <!-- pocetak kartice -->

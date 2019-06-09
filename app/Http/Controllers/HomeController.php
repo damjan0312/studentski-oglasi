@@ -7,6 +7,7 @@ use App\AdsCreator;
 use App\Ads;
 use App\PublisherAds;
 use App\StudentAds;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
@@ -126,6 +127,11 @@ class HomeController extends Controller
 
     public function deleteAd()
     {
+      
+      $user= User::where('id','=',Auth::user()->id)->first();
+      $user->numberOfAds=intval($user->numberOfAds)- 1;
+      $user->save();
+
       $id=Input::get('id');
       $ad=AdsCreator::where([
                     ['userId','=',Auth::user()->id],

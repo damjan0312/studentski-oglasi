@@ -21,16 +21,7 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-center row">
-
-            <div class="col-3">
-              <i class="fa fa-camera fa-3x upload-button"></i>
-              <input class="file-upload" type="file" accept="image/*"/>
-            </div>
-            <div class="col-9">
-              <h4>Promenite svoju profilnu sliku</h4>
-            </div>
-          </div>
+          
           <div class="col my-4"  style="border-top: 3px solid; border-color: rgba(236, 99, 19);">
             <p>Ime: {{($user->name)}}</p>
             <p>Prezime: {{($user->last_name)}}</p>
@@ -69,7 +60,7 @@
                 @csrf
                 <div class=" row">
 
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Ime:</label>
                       <div class="col-lg-8">

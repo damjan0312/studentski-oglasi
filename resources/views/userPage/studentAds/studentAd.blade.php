@@ -51,18 +51,18 @@
                         <option value="Prodaja Knjiga">Prodaja Knjiga</option>
                         <option value="Trazim Cimera">Trazim Cimera</option>
                         <option value="Privatni Casovi">Privatni Casovi</option>
-                        <option value="Ostalo">Ostalo</option>
+                        <option value="Ostalo">Ostalo (Zurke, Izlasci...)</option>
                     </select>
                 </div>
                 <div class="d-flex justify-content-center mt-2">
                     <button
-                    id="search-button" 
+                    id="search-button"
                     class="btn btn-lg"
                     style="background-color: #ef681a"
                     > PRETRAZI </i> </button>
                 </div>
-                
-                
+
+
             </form>
             </p>
         </div>
@@ -71,7 +71,7 @@
         @if($indicator!=1)
         <div class="ads-div row">
             <div id="newest-ads" class="col-sm-12">
-           
+
 
                 <p class="h2 pl-4">
                     NAJNOVIJI OGLASI <i class="fas fa-ad" style="color: rgb(228, 91, 12);"></i>
@@ -85,9 +85,9 @@
 
                         <div class="ad p-3">   <!-- pocetak kartice -->
 
-                                        <div 
+                                        <div
                                         id="cards"
-                                        class="card p-2 text-dark" 
+                                        class="card p-2 text-dark"
                                         style="border: 2px solid lightgray; border-radius: 20px; background-color: #eaeaea;"
                                         >
 
@@ -98,16 +98,20 @@
                                         <hr>
                                         <p class="card-text"><b>Opis oglasa:</b> <br/>{{$ad->description}}</p>
                                         <hr/>
-                                        
-                                        <p>Kontakt: {{$user->phoneNumber}}</p>
-                                        <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$user->id}}">{{$user->name." ".$user->last_name }}</a></small></p>
+
+                                        @if($ad->phoneNumber !=null)
+                                          <p>Kontakt: {{$ad->phoneNumber}}</p>
+                                        @else
+                                          <p>Kontakt: {{$ad->email}}</p>
+                                        @endif
+                                        <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$ad->id}}">{{$ad->name." ".$ad->last_name }}</a></small></p>
 
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <small>
                                                     <p class="card-text">
-                                                        <b>Postavljen:</b> 
+                                                        <b>Postavljen:</b>
                                                         <br/>{{$ad->dateCreated}}
                                                     </p>
                                                 </small>
@@ -116,7 +120,7 @@
                                             <div class="col-sm-6">
                                                 <small>
                                                     <p>
-                                                        <b>Istice:</b> 
+                                                        <b>Istice:</b>
                                                         <br/>{{$ad->dateExpired}}
                                                     </p>
                                                 </small>
@@ -138,11 +142,11 @@
 
         </div>
         @else
-        
+
         <div id="search-list" class="newest-ads">
         <a class="ml-5" href="{{route('studentAd')}}">Ocisti rezultate pretrage</a>
                     <div class="row">
-                       
+
                         <p class="h1 ml-5 mt-2 nowrap">REZULTATI PRETRAGE <i style="color: rgba(236, 99, 19);"
                         class="far fa-eye"></i></p>
                     </div>
@@ -154,56 +158,58 @@
                                 class="fas fa-frown"></i></p>
                         @else
                         @foreach ($ads as $ad)
-                        <div class="col-md-3 text-center">
-                            <div class="ad p-3">
+                    <div class="col-md-3 text-center">
 
-                
-                            <div class="ad p-3">   <!-- pocetak kartice -->
+                        <div class="ad p-3">   <!-- pocetak kartice -->
 
-                                    <div 
-                                    id="cards"
-                                    class="card p-2 bg-light text-secondary" 
-                                    style="border: 2px solid lightgray; border-radius: 20px;"
-                                    >
+                                        <div
+                                        id="cards"
+                                        class="card p-2 text-dark"
+                                        style="border: 2px solid lightgray; border-radius: 20px; background-color: #eaeaea;"
+                                        >
 
-                                    <div class="card-block">
-                                    <i class="fas fa-ad fa-2x float-right" style="color: #EC6313"></i>
-                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
-                                    <hr>
-                                    <p class="card-text"><b>Opis oglasa:</b> <br/>{{$ad->description}}</p>
-                                    <hr/>
+                                        <div class="card-block">
+                                        <i class="fas fa-user-graduate fa-2x float-left" style="color: #bfbdbd"></i>
+                                        <i class="fas fa-ad fa-2x float-right" style="color: #EC6313"></i>
+                                        <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
+                                        <hr>
+                                        <p class="card-text"><b>Opis oglasa:</b> <br/>{{$ad->description}}</p>
+                                        <hr/>
 
-                                    <p>Kontakt: {{$user->phoneNumber}}</p>
-                                    <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$user->id}}">{{$user->name." ".$user->last_name }}</a></small></p>
+                                        @if($ad->phoneNumber !=null)
+                                          <p>Kontakt: {{$ad->phoneNumber}}</p>
+                                        @else
+                                          <p>Kontakt: {{$ad->email}}</p>
+                                        @endif
+                                        <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$ad->id}}">{{$ad->name." ".$ad->last_name }}</a></small></p>
 
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <small>
-                                                <p class="card-text">
-                                                    <b>Postavljen:</b> 
-                                                    <br/>{{$ad->dateCreated}}
-                                                </p>
-                                            </small>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <small>
+                                                    <p class="card-text">
+                                                        <b>Postavljen:</b>
+                                                        <br/>{{$ad->dateCreated}}
+                                                    </p>
+                                                </small>
+
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <small>
+                                                    <p>
+                                                        <b>Istice:</b>
+                                                        <br/>{{$ad->dateExpired}}
+                                                    </p>
+                                                </small>
+                                            </div>
 
                                         </div>
-                                        <div class="col-sm-6">
-                                            <small>
-                                                <p>
-                                                    <b>Istice:</b> 
-                                                    <br/>{{$ad->dateExpired}}
-                                                </p>
-                                            </small>
                                         </div>
+                                        </div>
+                            </div>
 
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-
-                                    </div><!-- kraj kartice -->
-            </div>
-            @endforeach
+                        </div><!-- kraj kartice -->
+                        @endforeach
             @endif
         </div>
         </div>

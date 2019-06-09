@@ -8,6 +8,7 @@ use App\AdsCreator;
 use App\Category;
 use App\PublisherAds;
 use App\StudentAds;
+use App\User;
 use Illuminate\Support\Facades\Auth ;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
@@ -62,7 +63,8 @@ class adUploadController extends Controller
             'squareFeet' => 'required|integer',
             'description' =>'required|string|min:5|max:4000',
             'price' =>'required|integer',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required'
 
         ]);
 
@@ -82,6 +84,10 @@ class adUploadController extends Controller
           $ad->categoryID=0;
           $ad->description=$input['description'];
           $ad->save();
+
+          $user= User::where('id','=',Auth::user()->id)->first();
+            $user->numberOfAds=intval($user->numberOfAds)+ 1;
+            $user->save();
 
           $adsCreator=new AdsCreator;
           $adsId=(Ads::all()->last())->id;
@@ -149,6 +155,19 @@ class adUploadController extends Controller
 
             /*'id','headline','categoryID','description'*/
             //Auth::user()->student
+
+            request()->validate([
+              'category' => 'required',
+              'headline' =>'required|string',
+              'description' =>'required|string',
+  
+          ]);
+  
+
+            $user= User::where('id','=',Auth::user()->id)->first();
+            $user->numberOfAds=intval($user->numberOfAds)+ 1;
+            $user->save();
+
 
             $input=Input::only('headline','category','description');
             $ad=new Ads;
