@@ -41,7 +41,12 @@ class AdminController extends Controller
   public function deletePubAd()
   {
     $id=Input::get('id');
-    $ad=AdsCreator::where('adId', '=', $id);
+    $ad=AdsCreator::where('adId', '=', $id)->first();
+
+    $user=User::where('id', '=', $ad->userId)->first();
+    $user->numberOfAds = $user->numberOfAds - 1;
+    $user->save();
+
     $ad->delete();
     $ad= Ads::where('id','=',$id);
     $ad->delete();
@@ -54,7 +59,13 @@ class AdminController extends Controller
   public function deleteStudAd()
   {
     $id=Input::get('id');
-    $ad=AdsCreator::where('adId', '=', $id);
+    $ad=AdsCreator::where('adId', '=', $id)->first();
+
+    $user=User::where('id', '=', $ad->userId)->first();
+    $user->numberOfAds = $user->numberOfAds - 1;
+    $user->save();
+    
+
     $ad->delete();
     $ad= Ads::where('id','=',$id);
     $ad->delete();

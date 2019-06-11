@@ -1,7 +1,10 @@
 <html>
 
 <head>
-    <title>Studentski oglasi</title>
+    <title>Studentski Oglasi</title>
+
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/183/183338.png">
+
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

@@ -120,26 +120,26 @@ a.control_prev, a.control_next {
   padding: 4% 3%;
   width: auto;
   height: auto;
-  background: #2a2a2a;
+  background: #e0e0e0;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 0.2;
   cursor: pointer;
 }
 
 a.control_prev:hover, a.control_next:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 a.control_prev {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 a.control_next {
   right: 0;
-  border-radius: 2px 0 0 2px;
+  border-radius: 10px 0 0 10px;
 }
 
 .slider_option {

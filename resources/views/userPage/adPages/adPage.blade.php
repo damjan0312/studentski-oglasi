@@ -36,7 +36,7 @@
 
                                       <div class="alert alert-danger">
 
-                                          <strong>Whoops!</strong> There were some problems with your input.
+                                          <strong>Ups!</strong> Doslo je do greske prilikom dodavanja oglasa
 
                                           <ul>
 
@@ -110,7 +110,9 @@
                                          </div>
                                             <div class="form-group" style="width: 100%;">
                                                 <input type="text" class="form-control form-control{{ $errors->has('street') ? ' is-invalid' : '' }}"
-                                                 placeholder="Ulica"  id="street" name="street">
+                                                 placeholder="Ulica"  id="street" 
+                                                 name="street"
+                                                 value="{{old('street')}}">
 
                                                     @if ($errors->has('street'))
                                                         <span class="invalid-feedback" role="alert">
@@ -122,7 +124,9 @@
                                         <div class="d-flex input-group ml-4 pr-4">
                                             <div class="form-group" style="width: 100%;">
                                                 <input type="datetime" class="form-control form-control{{ $errors->has('number') ? ' is-invalid' : '' }}"
-                                                    placeholder="Broj" name="number" >
+                                                    placeholder="Broj" 
+                                                    name="number"
+                                                    value="{{old('number')}}" >
 
                                                     @if ($errors->has('number'))
                                                         <span class="invalid-feedback" role="alert">
@@ -137,7 +141,9 @@
                                             <div class="form-group " style="width: 100%">
                                         <b class="float-left h4"> BROJ KVADRATA </b>
                                         <input type="text" class="form-control form-control{{ $errors->has('squareFeet') ? ' is-invalid' : '' }}"
-                                                    placeholder="Broj kvadrata" name="squareFeet">
+                                                    placeholder="Broj kvadrata" 
+                                                    value="{{old('squareFeet')}}"
+                                                    name="squareFeet">
 
                                                     @if ($errors->has('squareFeet'))
                                                         <span class="invalid-feedback" role="alert">
@@ -183,7 +189,8 @@
                                         <div class="d-flex ml-4 pr-4">
                                                 <div class="form-group " style="width: 100%">
                                             <b class="float-left h4"> GREJANJE </b>
-                                                    <select name="typeOfHeating" class="custom-select my-select">
+                                                    <select 
+                                                    name="typeOfHeating" class="custom-select my-select">
                                                     <option value="Centralno grejanje">Centralno grejanje</option>
                                                     <option value="Elektricna energija">Elektricna energija</option>
                                                     <option value="Cvrsto gorivo">Cvrsto gorivo (drva,pelet,ugalj)</option>
@@ -197,7 +204,9 @@
                                         <div class="d-flex ml-4 mr-4">
                                             <div class="form-group ">
                                             <b class="float-left"> TV </b>
-                                            <input id="cb-tv" name="tv" type="checkbox" class="ml-2 form-control{{ $errors->has('tv') ? ' is-invalid' : '' }}" style="float: left; margin-top: 5px;>">
+                                            <input
+                                            {{ (! empty(old('tv')) ? 'checked' : '') }}
+                                             id="cb-tv" name="tv" type="checkbox" class="ml-2 form-control{{ $errors->has('tv') ? ' is-invalid' : '' }}" style="float: left; margin-top: 5px;>">
                                                     @if ($errors->has('tv'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('tv') }}</strong>
@@ -206,7 +215,9 @@
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> INTERNET </b>
-                                              <input id="cb-internet" name="internet" type="checkbox" class="ml-2 form-control{{ $errors->has('internet') ? ' is-invalid' : '' }}"
+                                              <input 
+                                              {{ (! empty(old('internet')) ? 'checked' : '') }}
+                                              id="cb-internet" name="internet" type="checkbox" class="ml-2 form-control{{ $errors->has('internet') ? ' is-invalid' : '' }}"
                                                 style="float: left; margin-top: 5px;>">
                                               @if ($errors->has('internet'))
                                                  <span class="invalid-feedback" role="alert">
@@ -216,7 +227,9 @@
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> KLIMA UREDJAJ </b>
-                                              <input id="cb-klima"  name="airCondition" type="checkbox" class="ml-2 form-control{{ $errors->has('airCondition') ? ' is-invalid' : '' }}"
+                                              <input 
+                                              {{ (! empty(old('airCondition')) ? 'checked' : '') }}
+                                              id="cb-klima"  name="airCondition" type="checkbox" class="ml-2 form-control{{ $errors->has('airCondition') ? ' is-invalid' : '' }}"
                                               style="float: left; margin-top: 5px;>">
                                               @if ($errors->has('airCondition'))
                                                  <span class="invalid-feedback" role="alert">
@@ -226,7 +239,9 @@
                                             </div>
                                             <div class="form-group ml-3">
                                               <b class="float-left"> PARKING </b>
-                                              <input id="cb-parking" name="parking" type="checkbox" class="ml-2 form-control{{ $errors->has('parking') ? ' is-invalid' : '' }}"
+                                              <input 
+                                              {{ (! empty(old('parking')) ? 'checked' : '') }}
+                                              id="cb-parking" name="parking" type="checkbox" class="ml-2 form-control{{ $errors->has('parking') ? ' is-invalid' : '' }}"
                                                style="float: left; margin-top: 5px;>">
                                               @if ($errors->has('parking'))
                                                   <span class="invalid-feedback" role="alert">
@@ -249,7 +264,7 @@
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> NASLOV OGLASA </b>
                                                     <input type="text" class="form-control form-control{{ $errors->has('headline') ? ' is-invalid' : '' }}"
-                                                                placeholder="" name="headline">
+                                                                placeholder="" name="headline" value="{{old('headline')}}">
 
                                                     @if ($errors->has('headline'))
                                                         <span class="invalid-feedback" role="alert">
@@ -263,7 +278,11 @@
                                                 <div class="form-group " style="width: 100%">
                                                     <b class="float-left h4"> OPIS </b>
                                                     <textarea type="text" class="form-control form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
-                                                                placeholder="" id="description" name="description"> </textarea>
+                                                                placeholder="" 
+                                                                id="description" 
+                                                                name="description"
+                                                                value="{{old('description')}}"
+                                                                > </textarea>
                                                     @if ($errors->has('description'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('description') }}</strong>
@@ -282,7 +301,9 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price">
+                                                            <input type="text" 
+                                                            value="{{old('price')}}"
+                                                            class="form-control form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price">
                                                             @if ($errors->has('price'))
                                                                 <span class="invalid-feedback" role="alert">
                                                                     <strong>{{ $errors->first('price') }}</strong>
@@ -314,7 +335,8 @@
                                     <!-- pocetak dela za fotografije -->
                                     <div id="photo-part" class="mt-4 text-center" style="display:none;">
 
-                                        <input type="file" name="image[]" class="multi" multiple>
+                                        <input
+                                        type="file" name="image[]" class="multi" multiple>
 
 
                                     </div>

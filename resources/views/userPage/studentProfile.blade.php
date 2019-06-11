@@ -7,6 +7,7 @@
 
 <section id="profile-section" class="text-dark">
 
+
   <div class="dark-overlay">
     <div class="home-inner container">
       <div class="row bg-light" >
@@ -54,19 +55,69 @@
               <!-- UREDI PROFIL -->
               <form class="form-horizontal"  method="POST" action="/updateProfil">
                 @csrf
+                <div class="alert">
+@if ($message = Session::get('success'))
+
+<div class="alert alert-success alert-block">
+
+    <button type="button" class="close" data-dismiss="alert">×</button>
+
+        <strong>{{ $message }}</strong>
+
+</div>
+
+@endif
+
+
+
+@if (count($errors) > 0)
+
+    <div class="alert alert-danger">
+
+        <strong>Ups!</strong> Doslo je do greske prilikom dodavanja oglasa
+
+        <ul>
+
+            @foreach ($errors->all() as $error)
+
+                <li>{{ $error }}</li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
+
+@endif
+</div>
                 <div class=" row justify-content-center">
 
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Ime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" name="name" type="text" value={{$user->name}}>
+                        <input class="form-control form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" type="text" value={{$user->name}}>
+
+                        @if ($errors->has('name'))
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $errors->first('name') }}</strong>
+                              </span>
+                        @endif
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Prezime:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" name="last_name" type="text" value={{$user->last_name}}>
+                        <input class="form-control form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" 
+                        name="last_name" 
+                        type="text" 
+                        value={{$user->last_name}}>
+
+                        @if ($errors->has('last_name'))
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $errors->first('last_name') }}</strong>
+                              </span>
+                        @endif
                       </div>
                     </div>
 
@@ -82,19 +133,46 @@
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Broj Telefona:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" name="phoneNumber" type="text" value={{$user->phoneNumber}}>
+                        <input class="form-control form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" 
+                        name="phoneNumber" 
+                        type="text" 
+                        value={{$user->phoneNumber}}>
+
+                        @if ($errors->has('phoneNumber'))
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $errors->first('phoneNumber') }}</strong>
+                              </span>
+                        @endif
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Fakultet:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" name="faculty" value={{$student->faculty}}>
+                        <input class="form-control form-control{{ $errors->has('faculty') ? ' is-invalid' : '' }}" 
+                        type="text" 
+                        name="faculty" 
+                        value={{$student->faculty}}>
+
+                        @if ($errors->has('faculty'))
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $errors->first('faculty') }}</strong>
+                              </span>
+                        @endif
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Godina studiranja:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="number" name="yearOfStudy" value={{$student->yearOfStudy}}>
+                        <input class="form-control form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" 
+                        type="number" 
+                        name="yearOfStudy" 
+                        value={{$student->yearOfStudy}}>
+
+                        @if ($errors->has('yearOfStudy'))
+                             <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $errors->first('yearOfStudy') }}</strong>
+                              </span>
+                        @endif
                       </div>
                     </div>
 

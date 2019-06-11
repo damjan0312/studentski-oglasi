@@ -104,11 +104,7 @@
                                         @else
                                           <p>Kontakt: {{$ad->email}}</p>
                                         @endif
-<<<<<<< HEAD
                                         <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$ad->id}}">{{$ad->name." ".$ad->last_name }}</a></small></p>
-=======
-                                        <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$ad->userId}}">{{$ad->name." ".$ad->last_name }}</a></small></p>
->>>>>>> ba075b62cc112ed63f6c226329a11a56c11ecc8d
 
                                         <hr>
                                         <div class="row">
@@ -162,7 +158,6 @@
                                 class="fas fa-frown"></i></p>
                         @else
                         @foreach ($ads as $ad)
-<<<<<<< HEAD
                     <div class="col-md-3 text-center">
 
                         <div class="ad p-3">   <!-- pocetak kartice -->
@@ -209,48 +204,6 @@
                                             </div>
 
                                         </div>
-=======
-                        <div class="col-md-3 text-center">
-                            <div class="ad p-3">
-
-
-                            <div class="ad p-3">   <!-- pocetak kartice -->
-
-                                    <div
-                                    id="cards"
-                                    class="card p-2 bg-light text-secondary"
-                                    style="border: 2px solid lightgray; border-radius: 20px;"
-                                    >
-
-                                    <div class="card-block">
-                                    <i class="fas fa-ad fa-2x float-right" style="color: #EC6313"></i>
-                                    <h4 class="card-title font-weight-bold">{{$ad->headline}}</h4>
-                                    <hr>
-                                    <p class="card-text"><b>Opis oglasa:</b> <br/>{{$ad->description}}</p>
-                                    <hr/>
-
-                                    <p>Kontakt: {{$ad->phoneNumber}}</p>
-                                    <p id="ad-updated-text" class="text-dark"><small>Postavio: <a  id="user" href="/pregledProfila/{{$ad->id}}">{{$ad->name." ".$ad->last_name }}</a></small></p>
-
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <small>
-                                                <p class="card-text">
-                                                    <b>Postavljen:</b>
-                                                    <br/>{{$ad->dateCreated}}
-                                                </p>
-                                            </small>
-
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <small>
-                                                <p>
-                                                    <b>Istice:</b>
-                                                    <br/>{{$ad->dateExpired}}
-                                                </p>
-                                            </small>
->>>>>>> ba075b62cc112ed63f6c226329a11a56c11ecc8d
                                         </div>
                                         </div>
                             </div>

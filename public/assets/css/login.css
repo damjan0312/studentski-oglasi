@@ -1,39 +1,25 @@
-html{
-  height: 100%;
-}
-body {
-  color: #fff;
-  font-family: 'Oxygen'; 
-  height: 100%;
- }
+html {
+  height: 100%; }
 
- .home-container{
-  min-height: 100%;
-}
+body {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: 'Oxygen';
+  height: 100%; }
+
+.navbar {
+  border-bottom: rgba(236, 99, 19, 0.7) 3px solid;
+  background-color: rgba(32, 32, 32, 0.7); }
 
 #home-section {
   background: url("../../assets/img/img1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
-  min-height: 100%;
-  
-}
-  
-.dark-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  
- }
+  height: 100%; }
 
-
-#home-section .home-inner {
-  padding-top: 150px; }
+#home-section .dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7); }
 
 .card {
   background-color: rgba(236, 99, 19, 0.7); }

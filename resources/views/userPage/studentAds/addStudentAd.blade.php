@@ -4,6 +4,9 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/addStudentAd.css')}}">
 
+<div class="row">
+<div class="col-sm-12">
+
 <div class="home-container">
 
     <section id="add-section" class="text-white">
@@ -124,6 +127,11 @@
 
 
 </div>
+
+
+</div>
+</div>
+
 
 <script src="{{asset('assets/js/ad.js')}}"></script>
 @endsection

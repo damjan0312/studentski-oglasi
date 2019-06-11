@@ -73,6 +73,14 @@ class HomeController extends Controller
 
         if(Auth::user()->student==true)
         {
+          request()->validate([
+            'last_name' => 'required|string',
+            'name' =>'required|string',
+            'phoneNumber' =>'required|string'
+    
+        ]);
+
+
           $input=Input::only('name','last_name','phoneNumber');
           Auth::user()->name=$input['name'];
           Auth::user()->last_name=$input['last_name'];
@@ -82,6 +90,17 @@ class HomeController extends Controller
           //return view('userPage.publisherProfile',compact('user'));
         }
         else {
+
+          
+      request()->validate([
+        'last_name' => 'required|string',
+        'name' =>'required|string',
+        'phoneNumber' =>'required|string',
+        'faculty' =>'required|string',
+        'yearOfStudy' =>'required|int'
+
+    ]);
+
           $input=Input::only('name','last_name','phoneNumber','faculty','yearOfStudy');
           Auth::user()->name=$input['name'];
           Auth::user()->last_name=$input['last_name'];

@@ -37,16 +37,19 @@
             <div class="row" id="first-row">
 
 
-                <div id="image-col" class="col-lg-6"> <!-- section for images LEFT -->
+                <div id="image-col" class="col-lg-6 pl-5"> <!-- section for images LEFT -->
 
 
-                    <div id="slider">
+                      
+                        @if(count($pictures)==2)
+                        <img src="{{URL::to('/')}}/images/{{$pictures[1]}}"/>
+                        @else
+                        <div id="slider">
 
-                    <a  class="control_next">></a>
-                    <a  class="control_prev"><</a>
-                        <a class="control_next">></a>
-                        <a  class="control_prev"><</a>
-
+                        <a  class="control_next"><i class="far fa-arrow-alt-circle-right fa-2x"></i></a>
+                        <a  class="control_prev"><i class="far fa-arrow-alt-circle-left fa-2x"></i></a>
+                        <a class="control_next"><i class="far fa-arrow-alt-circle-right fa-2x"></i></a>
+                        <a  class="control_prev"><i class="far fa-arrow-alt-circle-left fa-2x"></i></a>
                         <ul>
                         @for ($i = 1; $i < count($pictures); $i++)
 
@@ -56,11 +59,10 @@
 
                         @endfor
                         </ul>
-
-
-
-
-                    </div>
+                        </div>
+                        @endif
+                        
+                  
 
 
                     <p id="ad-updated-text" class="text-dark"><small>Kreiran: {{$ad->dateCreated}}</small></p>
